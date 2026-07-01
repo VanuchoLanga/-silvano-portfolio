@@ -236,17 +236,25 @@ function Contact() {
 
   const handleChange = e => setForm(f => ({ ...f, [e.target.name]: e.target.value }))
 
-  const handleSubmit = async e => {
-    e.preventDefault()
-    setStatus('sending')
-    try {
-      await window.emailjs?.send('service_portfolio', 'template_portfolio', { ...form, to_name: 'Silvano' })
-      setStatus('ok')
-      setForm({ name: '', email: '', message: '' })
-    } catch {
-      setStatus('err')
+    const handleSubmit = async e => {
+      e.preventDefault()
+      setStatus('sending')
+      try {
+        const res = await fetch('https://formspree.io/f/xzdljknq', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(form)
+        })
+        if (res.ok) {
+          setStatus('ok')
+          setForm({ name: '', email: '', message: '' })
+        } else {
+          setStatus('err')
+        }
+      } catch {
+        setStatus('err')
+      }
     }
-  }
 
   return (
     <section className="section contact" id="contact">
