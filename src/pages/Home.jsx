@@ -28,7 +28,7 @@ function Hero() {
           <img
             src="/assets/silva.png"
             alt="Silvano Langa"
-            onError={e => { e.target.src = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&fit=crop&crop=face' }}
+
           />
           <div className="hero__status">
             <span className="hero__status-dot" />
@@ -187,7 +187,6 @@ function About() {
             <img
               src="/assets/sobresilvano.png"
               alt="Silvano Langa"
-              onError={e => { e.target.src = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=800&fit=crop&crop=face' }}
             />
           </div>
         </div>
