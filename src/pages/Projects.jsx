@@ -1,16 +1,175 @@
-import { useState } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { Link } from 'react-router-dom'
-import { projects } from '../data'
 import './Projects.css'
 
-const FILTERS = ['Todos', 'UX/UI', 'Full Stack', 'Social Media', 'Branding', 'Desktop']
+// ── DATA ─────────────────────────────────────────────────────────────────────
+// Substitui os src pelos teus ficheiros reais em /assets/
+const CATEGORIES = [
+  { id: 'all',        label: 'Todos' },
+  { id: 'design',     label: 'Design Gráfico' },
+  { id: 'fullstack',  label: 'Full Stack' },
+  { id: 'social',     label: 'Social Media' },
+  { id: 'logos',      label: 'Logótipos' },
+]
 
+const ITEMS = [
+  // ── DESIGN GRÁFICO ──────────────────────────────────────────────
+  { id: 'd1', cat: 'design', src: '/assets/design/arte1.jpg',  label: 'Flyer Evento',       client: 'Criativismo' },
+  { id: 'd2', cat: 'design', src: '/assets/design/arte2.jpg',  label: 'Campanha Impressa',  client: 'Criativismo' },
+  { id: 'd3', cat: 'design', src: '/assets/design/arte3.jpg',  label: 'Brochura',           client: 'EPTC' },
+  { id: 'd4', cat: 'design', src: '/assets/design/arte4.jpg',  label: 'Cartaz',             client: 'Legend Segurança' },
+  { id: 'd5', cat: 'design', src: '/assets/design/arte5.jpg',  label: 'Banner Digital',     client: 'Criativismo' },
+  { id: 'd6', cat: 'design', src: '/assets/design/arte6.jpg',  label: 'Material POS',       client: 'Criativismo' },
+
+  // ── FULL STACK ──────────────────────────────────────────────────
+  { id: 'f1', cat: 'fullstack', src: '/assets/fullstack/legend.jpg',   label: 'Legend Segurança',      client: 'Website Institucional' },
+  { id: 'f2', cat: 'fullstack', src: '/assets/fullstack/bazara.jpg',   label: 'Bazara E-Commerce',     client: 'Plataforma de Vendas' },
+  { id: 'f3', cat: 'fullstack', src: '/assets/fullstack/nexa.jpg',     label: 'NEXA Health',           client: 'Plataforma de Saúde' },
+  { id: 'f4', cat: 'fullstack', src: '/assets/fullstack/sigecap.jpg',  label: 'SiGeCat',               client: 'App Desktop' },
+
+  // ── SOCIAL MEDIA — EPTC ─────────────────────────────────────────
+  { id: 's1', cat: 'social', subclient: 'EPTC', src: '/assets/social/eptc/post1.jpg',  label: 'Post Institucional' },
+  { id: 's2', cat: 'social', subclient: 'EPTC', src: '/assets/social/eptc/post2.jpg',  label: 'Reel de Formatura' },
+  { id: 's3', cat: 'social', subclient: 'EPTC', src: '/assets/social/eptc/post3.jpg',  label: 'Campanha de Matrículas' },
+  { id: 's4', cat: 'social', subclient: 'EPTC', src: '/assets/social/eptc/post4.jpg',  label: 'Dia do Professor' },
+  { id: 's5', cat: 'social', subclient: 'EPTC', src: '/assets/social/eptc/post5.jpg',  label: 'Story Promocional' },
+  { id: 's6', cat: 'social', subclient: 'EPTC', src: '/assets/social/eptc/post6.jpg',  label: 'Carrossel Cursos' },
+
+  // ── SOCIAL MEDIA — CRIATIVISMO ──────────────────────────────────
+  { id: 's7', cat: 'social', subclient: 'Criativismo', src: '/assets/social/criativismo/post1.jpg', label: 'Post Agência' },
+  { id: 's8', cat: 'social', subclient: 'Criativismo', src: '/assets/social/criativismo/post2.jpg', label: 'Campanha Cliente' },
+  { id: 's9', cat: 'social', subclient: 'Criativismo', src: '/assets/social/criativismo/post3.jpg', label: 'Arte Especial' },
+
+  // ── SOCIAL MEDIA — OUTRAS ───────────────────────────────────────
+  { id: 's10', cat: 'social', subclient: 'Outros',      src: '/assets/social/outros/post1.jpg',     label: 'Arte Única' },
+  { id: 's11', cat: 'social', subclient: 'Outros',      src: '/assets/social/outros/post2.jpg',     label: 'Arte Única' },
+
+  // ── LOGÓTIPOS ───────────────────────────────────────────────────
+  { id: 'l1', cat: 'logos', src: '/assets/logos/logo1.png', label: 'Logo 1' },
+  { id: 'l2', cat: 'logos', src: '/assets/logos/logo2.png', label: 'Logo 2' },
+  { id: 'l3', cat: 'logos', src: '/assets/logos/logo3.png', label: 'Logo 3' },
+  { id: 'l4', cat: 'logos', src: '/assets/logos/logo4.png', label: 'Logo 4' },
+  { id: 'l5', cat: 'logos', src: '/assets/logos/logo5.png', label: 'Logo 5' },
+  { id: 'l6', cat: 'logos', src: '/assets/logos/logo6.png', label: 'Logo 6' },
+  { id: 'l7', cat: 'logos', src: '/assets/logos/logo7.png', label: 'Logo 7' },
+  { id: 'l8', cat: 'logos', src: '/assets/logos/logo8.png', label: 'Logo 8' },
+]
+
+// ── LIGHTBOX ─────────────────────────────────────────────────────────────────
+function Lightbox({ items, index, onClose, onPrev, onNext }) {
+  const item = items[index]
+
+  useEffect(() => {
+    const fn = e => {
+      if (e.key === 'Escape') onClose()
+      if (e.key === 'ArrowLeft') onPrev()
+      if (e.key === 'ArrowRight') onNext()
+    }
+    window.addEventListener('keydown', fn)
+    document.body.style.overflow = 'hidden'
+    return () => {
+      window.removeEventListener('keydown', fn)
+      document.body.style.overflow = ''
+    }
+  }, [onClose, onPrev, onNext])
+
+  return (
+    <div className="lightbox" onClick={onClose}>
+      <button className="lightbox__close" onClick={onClose}>✕</button>
+      <button className="lightbox__prev" onClick={e => { e.stopPropagation(); onPrev() }}>‹</button>
+      <div className="lightbox__content" onClick={e => e.stopPropagation()}>
+        <img src={item.src} alt={item.label} className="lightbox__img" />
+        <div className="lightbox__info">
+          <p className="lightbox__label">{item.label}</p>
+          {item.client && <p className="lightbox__client t-mono">{item.client}</p>}
+          {item.subclient && <p className="lightbox__client t-mono">{item.subclient}</p>}
+          <p className="lightbox__counter t-mono">{index + 1} / {items.length}</p>
+        </div>
+      </div>
+      <button className="lightbox__next" onClick={e => { e.stopPropagation(); onNext() }}>›</button>
+    </div>
+  )
+}
+
+// ── SOCIAL SUBGROUPS ─────────────────────────────────────────────────────────
+function SocialGrid({ items, onOpen }) {
+  const subclients = [...new Set(items.map(i => i.subclient))]
+
+  return (
+    <div className="social-groups">
+      {subclients.map(sub => {
+        const group = items.filter(i => i.subclient === sub)
+        return (
+          <div key={sub} className="social-group">
+            <p className="social-group__label t-mono">— {sub}</p>
+            <div className="pg-grid pg-grid--3">
+              {group.map((item, idx) => {
+                const globalIdx = items.indexOf(item)
+                return (
+                  <div
+                    key={item.id}
+                    className="pg-item"
+                    onClick={() => onOpen(globalIdx)}
+                  >
+                    <img src={item.src} alt={item.label} loading="lazy" />
+                    <div className="pg-item__overlay">
+                      <span>{item.label}</span>
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+        )
+      })}
+    </div>
+  )
+}
+
+// ── MAIN PAGE ────────────────────────────────────────────────────────────────
 export default function AllProjects() {
-  const [filter, setFilter] = useState('Todos')
+  const [active, setActive] = useState('all')
+  const [lightbox, setLightbox] = useState(null) // { items, index }
 
-  const filtered = filter === 'Todos'
-    ? projects
-    : projects.filter(p => p.category.toLowerCase().includes(filter.toLowerCase()))
+  const filtered = active === 'all' ? ITEMS : ITEMS.filter(i => i.cat === active)
+
+  const openLightbox = useCallback((items, index) => {
+    setLightbox({ items, index })
+  }, [])
+
+  const closeLightbox = useCallback(() => setLightbox(null), [])
+
+  const prevItem = useCallback(() => {
+    setLightbox(lb => ({
+      ...lb,
+      index: (lb.index - 1 + lb.items.length) % lb.items.length
+    }))
+  }, [])
+
+  const nextItem = useCallback(() => {
+    setLightbox(lb => ({
+      ...lb,
+      index: (lb.index + 1) % lb.items.length
+    }))
+  }, [])
+
+  const renderGrid = (items, cols = 3) => (
+    <div className={`pg-grid pg-grid--${cols}`}>
+      {items.map((item, idx) => (
+        <div
+          key={item.id}
+          className="pg-item"
+          onClick={() => openLightbox(items, idx)}
+        >
+          <img src={item.src} alt={item.label} loading="lazy" />
+          <div className="pg-item__overlay">
+            <span>{item.label}</span>
+            {item.client && <span className="pg-item__client">{item.client}</span>}
+          </div>
+        </div>
+      ))}
+    </div>
+  )
 
   return (
     <main className="all-projects" style={{ paddingTop: 'var(--nav-h)' }}>
@@ -18,72 +177,66 @@ export default function AllProjects() {
 
         {/* HEADER */}
         <div className="ap-header">
-          <div className="ap-header__left">
-            <Link to="/" className="ap-back">← voltar</Link>
-            <p className="sec-label" style={{ marginBottom: 0 }}>todos os projectos</p>
-            <h1 className="ap-title">Projectos</h1>
-            <p className="ap-sub">
-              Uma selecção do trabalho que desenvolvi — produtos digitais, interfaces, estratégias de conteúdo e identidades visuais.
-            </p>
-          </div>
+          <Link to="/" className="ap-back">← voltar</Link>
+          <h1 className="ap-title">Portfólio</h1>
+          <p className="ap-sub">
+            Design gráfico, desenvolvimento, social media e identidades visuais — tudo num só lugar.
+          </p>
         </div>
 
-        {/* FILTERS */}
-        <div className="ap-filters">
-          {FILTERS.map(f => (
+        {/* TABS */}
+        <div className="ap-tabs">
+          {CATEGORIES.map(c => (
             <button
-              key={f}
-              className={`ap-filter-btn ${filter === f ? 'active' : ''}`}
-              onClick={() => setFilter(f)}
+              key={c.id}
+              className={`ap-tab ${active === c.id ? 'active' : ''}`}
+              onClick={() => setActive(c.id)}
             >
-              {f}
+              {c.label}
+              <span className="ap-tab__count">
+                {c.id === 'all' ? ITEMS.length : ITEMS.filter(i => i.cat === c.id).length}
+              </span>
             </button>
           ))}
-          <span className="ap-count t-mono">{filtered.length} projecto{filtered.length !== 1 ? 's' : ''}</span>
         </div>
 
-        {/* GRID */}
-        <div className="ap-grid">
-          {filtered.map((p, i) => (
-            <Link
-              key={p.id}
-              to={`/project/${p.id}`}
-              className="ap-card"
-              style={{ animationDelay: `${i * 0.06}s` }}
-            >
-              <div className="ap-card__img-wrap">
-                <img src={p.cover} alt={p.title} className="ap-card__img" loading="lazy" />
-                <div className="ap-card__hover-overlay">
-                  <span>ver case study →</span>
-                </div>
-              </div>
-              <div className="ap-card__body">
-                <span className="ap-card__cat t-mono">{p.category}</span>
-                <div className="ap-card__row">
-                  <h3 className="ap-card__title">{p.title}</h3>
-                  <span className="ap-card__year t-mono">{p.year}</span>
-                </div>
-                <p className="ap-card__tagline">{p.tagline}</p>
-                <div className="ap-card__tools">
-                  {p.tools.slice(0, 4).map(t => (
-                    <span key={t} className="tag">{t}</span>
-                  ))}
-                  {p.tools.length > 4 && (
-                    <span className="tag">+{p.tools.length - 4}</span>
-                  )}
-                </div>
-              </div>
-            </Link>
-          ))}
-        </div>
+        {/* CONTENT */}
+        <div className="ap-content">
 
-        {filtered.length === 0 && (
-          <div className="ap-empty">
-            <p className="t-mono">nenhum projecto encontrado para "{filter}"</p>
-          </div>
-        )}
+          {/* ALL */}
+          {active === 'all' && renderGrid(filtered, 3)}
+
+          {/* DESIGN */}
+          {active === 'design' && renderGrid(filtered, 3)}
+
+          {/* FULLSTACK */}
+          {active === 'fullstack' && renderGrid(filtered, 2)}
+
+          {/* SOCIAL — agrupado por cliente */}
+          {active === 'social' && (
+            <SocialGrid
+              items={filtered}
+              onOpen={(idx) => openLightbox(filtered, idx)}
+            />
+          )}
+
+          {/* LOGOS — grelha mais apertada */}
+          {active === 'logos' && renderGrid(filtered, 4)}
+
+        </div>
 
       </div>
+
+      {/* LIGHTBOX */}
+      {lightbox && (
+        <Lightbox
+          items={lightbox.items}
+          index={lightbox.index}
+          onClose={closeLightbox}
+          onPrev={prevItem}
+          onNext={nextItem}
+        />
+      )}
     </main>
   )
 }
