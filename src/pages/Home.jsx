@@ -59,19 +59,19 @@ function Hero() {
         </nav>
 
         <div className="hero__social fade-up" style={{ animationDelay: '0.2s' }}>
-          <a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub">
+          <a href="https://github.com/VanuchoLanga" target="_blank" rel="noopener" aria-label="GitHub">
             <i className="fab fa-github" />
           </a>
-          <a href="https://www.linkedin.com/in/silvano-de-joaquim-langa-12928b396/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <a href="www.linkedin.com/in/silvano-de-joaquim-langa-7354803b7" target="_blank" rel="noopener" aria-label="LinkedIn">
             <i className="fab fa-linkedin-in" />
           </a>
-          <a href="https://www.instagram.com/silvano.jlanga" target="_blank" rel="noopener" aria-label="Instagram">
+          <a href="https://www.instagram.com/silvanoolangaa/" target="_blank" rel="noopener" aria-label="Instagram">
             <i className="fab fa-instagram" />
           </a>
           <a href="https://wa.me/message/UJZ7LIIHHUXPI1" target="_blank" rel="noopener" aria-label="WhatsApp">
             <i className="fab fa-whatsapp" />
           </a>
-          <a href="https://behance.net" target="_blank" rel="noopener" aria-label="Behance">
+          <a href="https://www.behance.net/silvanolanga" target="_blank" rel="noopener" aria-label="Behance">
             <i className="fab fa-behance" />
           </a>
         </div>
@@ -169,11 +169,11 @@ function About() {
 
             <div className="about__socials reveal" style={{ transitionDelay: '0.2s' }}>
               {[
-                { href: 'https://github.com',                                                icon: 'fab fa-github' },
-                { href: 'https://www.instagram.com/silvano.jlanga',                         icon: 'fab fa-instagram' },
+                { href: 'https://github.com/VanuchoLanga',                                                icon: 'fab fa-github' },
+                { href: 'https://www.instagram.com/silvanoolangaa/',                         icon: 'fab fa-instagram' },
                 { href: 'https://www.linkedin.com/in/silvano-de-joaquim-langa-12928b396/', icon: 'fab fa-linkedin-in' },
-                { href: 'https://behance.net',                                               icon: 'fab fa-behance' },
-                { href: 'https://wa.me/message/UJZ7LIIHHUXPI1',                             icon: 'fab fa-whatsapp' },
+                { href: 'https://www.behance.net/silvanolanga',                                               icon: 'fab fa-behance' },
+                { href: 'https://wa.me/message/+258833529644',                             icon: 'fab fa-whatsapp' },
               ].map(s => (
                 <a key={s.icon} href={s.href} target="_blank" rel="noopener" className="about__social-link">
                   <i className={s.icon} />
@@ -293,10 +293,10 @@ function Contact() {
 
           <div className="contact__links">
             {[
-              { href: 'https://wa.me/message/UJZ7LIIHHUXPI1',                               icon: 'fab fa-whatsapp',    label: 'WhatsApp',  sub: 'Resposta rápida' },
-              { href: 'https://www.linkedin.com/in/silvano-de-joaquim-langa-12928b396/',    icon: 'fab fa-linkedin-in', label: 'LinkedIn',   sub: 'Silvano Langa' },
-              { href: 'https://www.instagram.com/silvano.jlanga',                           icon: 'fab fa-instagram',  label: 'Instagram',  sub: '@silvano.jlanga' },
-              { href: 'https://behance.net',                                                 icon: 'fab fa-behance',    label: 'Behance',    sub: 'Ver trabalho' },
+              { href: 'https://wa.me/message/+258833529644',                               icon: 'fab fa-whatsapp',    label: 'WhatsApp',  sub: 'Resposta rápida' },
+              { href: 'www.linkedin.com/in/silvano-de-joaquim-langa-7354803b7',    icon: 'fab fa-linkedin-in', label: 'LinkedIn',   sub: 'Silvano Langa' },
+              { href: 'https://www.instagram.com/silvanoolangaa/',                           icon: 'fab fa-instagram',  label: 'Instagram',  sub: '@silvano.jlanga' },
+              { href: 'https://www.behance.net/silvanolanga',                                                 icon: 'fab fa-behance',    label: 'Behance',    sub: 'Ver trabalho' },
             ].map(c => (
               <a key={c.label} href={c.href} target="_blank" rel="noopener" className="contact__link">
                 <i className={c.icon} />
