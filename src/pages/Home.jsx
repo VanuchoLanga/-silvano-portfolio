@@ -146,9 +146,6 @@ function About() {
               <p className="about__text">
                 Sou curioso por natureza. Quando não sei algo, não descasnso enquanto não entendo. Sou teimoso, mas a minha teimosia tem direcção: não desisto de um problema antes de o resolver. Ouço podcasts, leio livros de mindset, participo de uma comunidade nerd e sou cristão. Tudo isso moldou a forma como penso, como trabalho e como me relaciono com as pessoas à minha volta. 
               </p>
-              <p className="about__text">
-                Sou curioso por natureza. Quando não sei algo, não descasnso enquanto não entendo. Sou teimoso, mas a minha teimosia tem direcção: não desisto de um problema antes de o resolver. Ouço podcasts, leio livros de mindset, participo de uma comunidade nerd e sou cristão. Tudo isso moldou a forma como penso, como trabalho e como me relaciono com as pessoas à minha volta. 
-              </p>
             </div>
 
             <div className="about__stack reveal" style={{ transitionDelay: '0.1s' }}>
