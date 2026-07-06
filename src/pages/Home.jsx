@@ -141,10 +141,13 @@ function About() {
           <div className="about__text-col">
             <div className="about__body reveal">
               <p className="about__text">
-                Comecei a aprender a programar porque queria criar coisas bonitas. Aprendi design porque queria que o código tivesse impacto. Hoje faço as duas coisas — e é exactamente essa combinação que torna o meu trabalho diferente.
+                Cresci em Maputo e passei três anos em Manjacaze, e essa experiência de sair da capital, de conviver com um ritmo diferente e de me adaptar a contextos distintos foi uma das coisas que mais me formou. Aprendi que adaptação não é fraqueza, é inteligência. Tenho 24 anos e estou numa fase da vida em que já tenho resultados concretos para mostrar, mas ainda tenho fome de aprender e de crescer, e isso, para mim, é a combinação mais poderosa que existe.
               </p>
               <p className="about__text">
-                Não entrego apenas um site ou uma app. Entrego produtos que contam uma história, resolvem problemas reais e deixam uma marca positiva em quem os usa. Gosto de simplificar o complexo, tornar o bonito útil e entregar sempre com foco no utilizador e no objetivo do cliente.
+                Sou curioso por natureza. Quando não sei algo, não descasnso enquanto não entendo. Sou teimoso, mas a minha teimosia tem direcção: não desisto de um problema antes de o resolver. Ouço podcasts, leio livros de mindset, participo de uma comunidade nerd e sou cristão. Tudo isso moldou a forma como penso, como trabalho e como me relaciono com as pessoas à minha volta. 
+              </p>
+              <p className="about__text">
+                Sou curioso por natureza. Quando não sei algo, não descasnso enquanto não entendo. Sou teimoso, mas a minha teimosia tem direcção: não desisto de um problema antes de o resolver. Ouço podcasts, leio livros de mindset, participo de uma comunidade nerd e sou cristão. Tudo isso moldou a forma como penso, como trabalho e como me relaciono com as pessoas à minha volta. 
               </p>
             </div>
 
