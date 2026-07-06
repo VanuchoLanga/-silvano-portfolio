@@ -91,7 +91,7 @@ export const projects = [
   },
   {
     id: 'social-media',
-    title: 'EPTC Social Strategy',
+    title: 'K-Desperta Social Strategy',
     year: '2025',
     category: 'Social Media',
     tagline: 'Estratégia que triplicou o engagement em 90 dias.',
@@ -182,10 +182,10 @@ export const projects = [
 ]
 
 export const experiences = [
-  { company:'Pocissione Company', role:'Designer Gráfico & Web Developer', period:'2026 — Presente', type:'Full-time', desc:'Desenvolvimento de interfaces web, sistemas de design e identidade visual para empresas moçambicanas.', skills:['React','Figma','TypeScript','UI/UX'] },
-  { company:'EPTC — Escola Profissional', role:'Social Media Manager & Designer', period:'2025 — 2026', type:'Full-time', desc:'Gestão das redes sociais institucionais, produção de conteúdo visual e estratégia de comunicação digital.', skills:['Social Media','Adobe Suite','Motion Design'] },
-  { company:'EPTC — Escola Profissional', role:'Formador de Design e Marketing', period:'2025', type:'Docência', desc:'Ministração de módulos de design gráfico e marketing digital para o ensino técnico-profissional.', skills:['Design Gráfico','Marketing Digital'] },
-  { company:'Criativismo Publicidade', role:'Designer Gráfico', period:'2024 — 2025', type:'Freelance', desc:'Materiais publicitários, identidade visual e peças de comunicação para clientes da agência.', skills:['Branding','Illustrator','Print Design'] },
+  { company:'Varios', role:'Designer Gráfico & Web Developer', period:'2019 — Presente', type:'Freelancer', desc:'Desenvolvimento web, sistemas de design e identidade visual para empresas Moçambicanas, Portuguesas, Brasileiras.', skills:['React','Phothoshop','Ilustrator','InDesign','JAVA'] },
+  { company:'Radio Comunitaria de Manjacaze', role:'IT, Formador', period:'2022', type:'Docência', desc:'Ministração de módulos do Paconte Microsoft ofice (Word, Excel, Power point) ', skills:['IT Geral'] },
+  { company:'EPTC - Escola Profissional', role:'Formador(estagiario) de Design e Marketing', period:'2025', type:'Docência', desc:'Ministração de módulos de design gráfico e marketing digital para o ensino técnico-profissional.', skills:['Design Gráfico','Marketing Digital'] },
+  { company:'Criatividade e Publicidade', role:'Designer Gráfico', period:'2024 - 2025', type:'Freelance', desc:'Materiais publicitários, identidade visual e peças de comunicação para clientes da agência.', skills:['Branding','Illustrator','Print Design'] },
 ]
 
 export const stack = [
