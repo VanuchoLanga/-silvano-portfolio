@@ -22,7 +22,7 @@ const ITEMS = [
   { id: 'd6', cat: 'design', src: '/assets/design/arte6.jpg',  label: 'Material POS',       client: 'Criativismo' },
 
   // ── FULL STACK ──────────────────────────────────────────────────
-  { id: 'f1', cat: 'fullstack', src: '/assets/fullstack/legend.jpg',   label: 'Legend Segurança',      client: 'Website Institucional' },
+  { id: 'f1', cat: 'fullstack', src: '/assets/ledend card.png',   label: 'Legend Segurança',      client: 'Website Institucional' },
   { id: 'f2', cat: 'fullstack', src: '/assets/fullstack/bazara.jpg',   label: 'Bazara E-Commerce',     client: 'Plataforma de Vendas' },
   { id: 'f3', cat: 'fullstack', src: '/assets/fullstack/nexa.jpg',     label: 'NEXA Health',           client: 'Plataforma de Saúde' },
   { id: 'f4', cat: 'fullstack', src: '/assets/fullstack/sigecap.jpg',  label: 'SiGeCat',               client: 'App Desktop' },
