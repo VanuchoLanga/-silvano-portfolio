@@ -6,7 +6,7 @@ export const projects = [
     category: 'Back-end · UX|UI · Front-end',
     tagline: 'Desenvolvimento completo',
     cover: '/assets/capa projecto legend.png',
-    hero:  'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&h=1080&fit=crop',
+    hero:  '/assets/caselegend.png',
     client: 'Legend Segurança Lda', role: 'Full Stack Developer', duration: '7 semanas',
     tools: ['Figma','React','Node.js','Tailwind','Mongo DB','Java'],
     liveUrl: '#',
