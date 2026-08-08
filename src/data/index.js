@@ -69,7 +69,7 @@ export const projects = [
     hero:  '/assets/subcapanexa.png',
     client: 'NEXA', role: 'Full Stack Developer', duration: '12 semanas',
     tools: ['HTML','CSS','JavaScript','Node.js','Express','MongoDB'],
-    liveUrl: 'https://nexa-lofk.onrender.com',
+    liveUrl: 'https://www.nexastore.store/',
     overview: 'Plataforma e-commerce de saúde e bem-estar para o mercado moçambicano com contas de cliente, painel admin com autenticação JWT e confirmações por email.',
     problem: 'Ausência de uma plataforma digital de saúde adaptada ao contexto moçambicano — mercado inexplorado com alta procura.',
     process: [
