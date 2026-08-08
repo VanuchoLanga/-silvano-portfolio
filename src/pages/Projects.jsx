@@ -45,14 +45,12 @@ const ITEMS = [
   { id: 's11', cat: 'social', subclient: 'Outros',      src: '/assets/social/outros/post2.jpg',     label: 'Arte Única' },
 
   // ── LOGÓTIPOS ───────────────────────────────────────────────────
-  { id: 'l1', cat: 'logos', src: '/assets/logos/logo1.png', label: 'Logo 1' },
-  { id: 'l2', cat: 'logos', src: '/assets/logos/logo2.png', label: 'Logo 2' },
-  { id: 'l3', cat: 'logos', src: '/assets/logos/logo3.png', label: 'Logo 3' },
-  { id: 'l4', cat: 'logos', src: '/assets/logos/logo4.png', label: 'Logo 4' },
-  { id: 'l5', cat: 'logos', src: '/assets/logos/logo5.png', label: 'Logo 5' },
-  { id: 'l6', cat: 'logos', src: '/assets/logos/logo6.png', label: 'Logo 6' },
-  { id: 'l7', cat: 'logos', src: '/assets/logos/logo7.png', label: 'Logo 7' },
-  { id: 'l8', cat: 'logos', src: '/assets/logos/logo8.png', label: 'Logo 8' },
+  { id: 'l1', cat: 'logos', src: '/assets/zula.png'},
+  { id: 'l2', cat: 'logos', src: '/assets/ingles ciezia.png'},
+  { id: 'l3', cat: 'logos', src: '/assets/logo yocula.png'},
+  { id: 'l4', cat: 'logos', src: '/assets/innerhive.png'},
+  { id: 'l5', cat: 'logos', src: '/assets/Nexus.png'},
+  { id: 'l6', cat: 'logos', src: '/assets/Brandford.png'},
 ]
 
 // ── LIGHTBOX ─────────────────────────────────────────────────────────────────
