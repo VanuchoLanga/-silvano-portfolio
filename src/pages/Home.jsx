@@ -141,7 +141,7 @@ function About() {
           <div className="about__text-col">
             <div className="about__body reveal">
                 <p className="about__text">
-                  Olá, sou o Silvano. Não sou apenas developer nem apenas designer — sou a pessoa que transforma o teu problema na solução que precisas.
+                  Olá, sou o Silvano. Não sou apenas developer nem apenas designer, sou a pessoa que transforma o teu problema na solução que precisas.
                 </p>
                 <p className="about__text">
                   Sou curioso por natureza e teimoso no bom sentido. Quando aceito um desafio, não existe meio-termo: ou encontro a solução, ou aprendo até a encontrar. Acordo todos os dias com uma ideia simples — ser 1% melhor do que ontem. No código, no design, na comunicação, na forma como penso.
