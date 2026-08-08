@@ -140,12 +140,15 @@ function About() {
           {/* TEXT SIDE */}
           <div className="about__text-col">
             <div className="about__body reveal">
-              <p className="about__text">
-                Cresci em Maputo e passei três anos em Manjacaze, e essa experiência de sair da capital, de conviver com um ritmo diferente e de me adaptar a contextos distintos foi uma das coisas que mais me formou. Aprendi que adaptação não é fraqueza, é inteligência. Tenho 24 anos e estou numa fase da vida em que já tenho resultados concretos para mostrar, mas ainda tenho fome de aprender e de crescer, e isso, para mim, é a combinação mais poderosa que existe.
-              </p>
-              <p className="about__text">
-                Sou curioso por natureza. Quando não sei algo, não descasnso enquanto não entendo. Sou teimoso, mas a minha teimosia tem direcção: não desisto de um problema antes de o resolver. Ouço podcasts, leio livros de mindset, participo de uma comunidade nerd e sou cristão. Tudo isso moldou a forma como penso, como trabalho e como me relaciono com as pessoas à minha volta. 
-              </p>
+                <p className="about__text">
+                  Olá, sou o Silvano. Não sou apenas developer nem apenas designer — sou a pessoa que transforma o teu problema na solução que precisas.
+                </p>
+                <p className="about__text">
+                  Sou curioso por natureza e teimoso no bom sentido. Quando aceito um desafio, não existe meio-termo: ou encontro a solução, ou aprendo até a encontrar. Acordo todos os dias com uma ideia simples — ser 1% melhor do que ontem. No código, no design, na comunicação, na forma como penso.
+                </p>
+                <p className="about__text">
+                  Quando trabalhas comigo, não estás a contratar um executante. Estás a trazer alguém que pensa contigo, questiona contigo e não para enquanto o resultado não for exactamente o que precisas.
+                </p>
             </div>
 
             <div className="about__stack reveal" style={{ transitionDelay: '0.1s' }}>
