@@ -35,10 +35,10 @@ const ITEMS = [
   { id: 's5', cat: 'social', subclient: 'PSICOLOGA', src: '/assets/psc5.png'},
   { id: 's6', cat: 'social', subclient: 'PSICOLOGA', src: '/assets/psc6.png'},
 
-  // ── SOCIAL MEDIA — CRIATIVISMO ──────────────────────────────────
-  { id: 's7', cat: 'social', subclient: 'Criativismo', src: '/assets/social/criativismo/post1.jpg', label: 'Post Agência' },
-  { id: 's8', cat: 'social', subclient: 'Criativismo', src: '/assets/social/criativismo/post2.jpg', label: 'Campanha Cliente' },
-  { id: 's9', cat: 'social', subclient: 'Criativismo', src: '/assets/social/criativismo/post3.jpg', label: 'Arte Especial' },
+  // ── SOCIAL MEDIA — AGENCIA ──────────────────────────────────
+  { id: 's7', cat: 'social', subclient: 'ZULA', src: '/assets/Agencia1.png'},
+  { id: 's8', cat: 'social', subclient: 'ZULA', src: '/assets/Agencia2.png'},
+  { id: 's9', cat: 'social', subclient: 'ZULA', src: '/assets/Agencia3.png'},
 
   // ── SOCIAL MEDIA — OUTRAS ───────────────────────────────────────
   { id: 's10', cat: 'social', subclient: 'Outros',      src: '/assets/social/outros/post1.jpg',     label: 'Arte Única' },
