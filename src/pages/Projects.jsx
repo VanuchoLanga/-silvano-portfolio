@@ -47,8 +47,8 @@ const ITEMS = [
   // ── LOGÓTIPOS ───────────────────────────────────────────────────
   { id: 'l1', cat: 'logos', src: '/assets/zula.png'},
   { id: 'l2', cat: 'logos', src: '/assets/ingles ciezia.png'},
-  { id: 'l3', cat: 'logos', src: '/assets/logo yocula.png'},
-  { id: 'l4', cat: 'logos', src: '/assets/innerhive.png'},
+  { id: 'l3', cat: 'logos', src: '/assets/Logo yocula.png'},
+  { id: 'l4', cat: 'logos', src: '/assets/Innerhive.png'},
   { id: 'l5', cat: 'logos', src: '/assets/Nexus.png'},
   { id: 'l6', cat: 'logos', src: '/assets/Brandford.png'},
 ]
