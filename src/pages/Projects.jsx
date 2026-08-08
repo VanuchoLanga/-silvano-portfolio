@@ -27,13 +27,13 @@ const ITEMS = [
   { id: 'f3', cat: 'fullstack', src: '/assets/fullstack/nexa.jpg',     label: 'NEXA Health',           client: 'Plataforma de Saúde' },
   { id: 'f4', cat: 'fullstack', src: '/assets/fullstack/sigecap.jpg',  label: 'SiGeCat',               client: 'App Desktop' },
 
-  // ── SOCIAL MEDIA — EPTC ─────────────────────────────────────────
-  { id: 's1', cat: 'social', subclient: 'EPTC', src: '/assets/social/eptc/post1.jpg',  label: 'Post Institucional' },
-  { id: 's2', cat: 'social', subclient: 'EPTC', src: '/assets/social/eptc/post2.jpg',  label: 'Reel de Formatura' },
-  { id: 's3', cat: 'social', subclient: 'EPTC', src: '/assets/social/eptc/post3.jpg',  label: 'Campanha de Matrículas' },
-  { id: 's4', cat: 'social', subclient: 'EPTC', src: '/assets/social/eptc/post4.jpg',  label: 'Dia do Professor' },
-  { id: 's5', cat: 'social', subclient: 'EPTC', src: '/assets/social/eptc/post5.jpg',  label: 'Story Promocional' },
-  { id: 's6', cat: 'social', subclient: 'EPTC', src: '/assets/social/eptc/post6.jpg',  label: 'Carrossel Cursos' },
+  // ── SOCIAL MEDIA — PSICOLOGA ─────────────────────────────────────────
+  { id: 's1', cat: 'social', subclient: 'PSICOLOGA', src: '/assets/psc1.png'},
+  { id: 's2', cat: 'social', subclient: 'PSICOLOGA', src: '/assets/psc2.png'},
+  { id: 's3', cat: 'social', subclient: 'PSICOLOGA', src: '/assets/psc3.png'},
+  { id: 's4', cat: 'social', subclient: 'PSICOLOGA', src: '/assets/psc4.png'},
+  { id: 's5', cat: 'social', subclient: 'PSICOLOGA', src: '/assets/psc5.png'},
+  { id: 's6', cat: 'social', subclient: 'PSICOLOGA', src: '/assets/psc6.png'},
 
   // ── SOCIAL MEDIA — CRIATIVISMO ──────────────────────────────────
   { id: 's7', cat: 'social', subclient: 'Criativismo', src: '/assets/social/criativismo/post1.jpg', label: 'Post Agência' },
