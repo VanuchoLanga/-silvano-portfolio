@@ -23,13 +23,9 @@ function Hero() {
     <section className="hero">
       <div className="hero__bg" />
       <div className="hero__bg-overlay" />
-      <div className="container">
+      <div className="container hero__container">
         <div className="hero__photo fade-up">
-          <img
-            src="/assets/silva.png"
-            alt="Silvano Langa"
-
-          />
+          <img src="/assets/silva.png" alt="Silvano Langa" />
           <div className="hero__status">
             <span className="hero__status-dot" />
             disponível
@@ -37,24 +33,20 @@ function Hero() {
         </div>
 
         <h1 className="hero__name fade-up" style={{ animationDelay: '0.05s' }}>
-          Silvano Langa
+          SILVANO LANGA
         </h1>
 
         <p className="hero__tagline fade-up" style={{ animationDelay: '0.1s' }}>
-          Full Stack Developer, UX/UI Designer & Social Media.
-          <br />
-          <span className="hero__location">
-            <i className="fas fa-map-marker-alt" /> Maputo, Moçambique
-          </span>
+          Full Stack Developer · UX/UI Designer · Social Media
         </p>
 
         <nav className="hero__links fade-up" style={{ animationDelay: '0.15s' }}>
-          <a href="#about">sobre</a>
-          <a href="#experience">experiência</a>
-          <a href="#projects">projectos</a>
-          <a href="#contact">contacto</a>
-          <a href="/silvano-langa-cv-v26.pdf" download className="hero__link-cv">
-            cv <i className="fas fa-download" />
+          <a href="#about" className="hero__btn">sobre</a>
+          <a href="#experience" className="hero__btn">experiência</a>
+          <a href="#projects" className="hero__btn">projectos</a>
+          <a href="#contact" className="hero__btn">contacto</a>
+          <a href="/silvano-langa-cv-v26.pdf" download className="hero__btn hero__btn--green">
+            <i className="fas fa-download" /> cv
           </a>
         </nav>
 
