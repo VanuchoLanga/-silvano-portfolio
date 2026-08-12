@@ -28,6 +28,7 @@ function Hero() {
           <img
             src="/assets/silva.png"
             alt="Silvano Langa"
+
           />
           <div className="hero__status">
             <span className="hero__status-dot" />
@@ -36,20 +37,26 @@ function Hero() {
         </div>
 
         <h1 className="hero__name fade-up" style={{ animationDelay: '0.05s' }}>
-          Olá, sou o<br />
-          <span className="hero__name-green">Silvano Langa.</span>
+          Silvano Langa
         </h1>
 
         <p className="hero__tagline fade-up" style={{ animationDelay: '0.1s' }}>
-          Resolvo problemas digitais<br />
-          <span className="hero__tagline-accent">que outros apenas executam.</span>
+          Full Stack Developer, UX/UI Designer & Social Media.
+          <br />
+          <span className="hero__location">
+            <i className="fas fa-map-marker-alt" /> Maputo, Moçambique
+          </span>
         </p>
 
-        <div className="hero__cta fade-up" style={{ animationDelay: '0.15s' }}>
-          <a href="#projects" className="btn btn-solid">
-            Ver o meu trabalho <i className="fas fa-arrow-right" />
+        <nav className="hero__links fade-up" style={{ animationDelay: '0.15s' }}>
+          <a href="#about">sobre</a>
+          <a href="#experience">experiência</a>
+          <a href="#projects">projectos</a>
+          <a href="#contact">contacto</a>
+          <a href="/silvano-langa-cv-v26.pdf" download className="hero__link-cv">
+            cv <i className="fas fa-download" />
           </a>
-        </div>
+        </nav>
 
         <div className="hero__social fade-up" style={{ animationDelay: '0.2s' }}>
           <a href="https://github.com/VanuchoLanga" target="_blank" rel="noopener" aria-label="GitHub">
