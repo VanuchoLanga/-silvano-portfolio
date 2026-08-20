@@ -72,15 +72,15 @@
 }
 
 .hero__name {
-  font-family: var(--mono);
-  font-size: clamp(2.2rem, 7vw, 5rem);
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  font-family: var(--sans);
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
   line-height: 1;
   color: var(--text);
   margin-bottom: 1rem;
   text-align: center;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .hero__tagline {

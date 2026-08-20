@@ -33,7 +33,7 @@ function Hero() {
         </div>
 
         <h1 className="hero__name fade-up" style={{ animationDelay: '0.05s' }}>
-          SILVANO LANGA
+          Silvano Langa
         </h1>
 
         <p className="hero__tagline fade-up" style={{ animationDelay: '0.1s' }}>
