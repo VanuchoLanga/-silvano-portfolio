@@ -24,6 +24,7 @@ function Hero() {
       <div className="hero__bg-photo" />
       <div className="hero__bg-gradient" />
 
+      {/* Left content — vertically centred */}
       <div className="container hero__content">
 
         <h1 className="hero__name fade-up">
@@ -53,12 +54,16 @@ function Hero() {
           </a>
         </div>
 
-        <div className="hero__scroll fade-up" style={{ animationDelay: '0.2s' }}>
-          <span>scroll</span>
-          <div className="hero__scroll-line" />
-        </div>
-
       </div>
+
+      {/* Mouse scroll — centred at bottom */}
+      <div className="hero__mouse fade-up">
+        <div className="hero__mouse-icon">
+          <div className="hero__mouse-wheel" />
+        </div>
+        <span>scroll</span>
+      </div>
+
     </section>
   )
 }
