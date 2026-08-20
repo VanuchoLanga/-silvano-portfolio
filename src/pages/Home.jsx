@@ -26,39 +26,34 @@ function Hero() {
 
       <div className="container hero__content">
 
-        <div className="hero__badge fade-up">
-          <span className="hero__badge-dot" />
-          disponível para projectos
-        </div>
-
-        <h1 className="hero__name fade-up" style={{ animationDelay: '0.08s' }}>
+        <h1 className="hero__name fade-up">
           Silvano<span className="hero__name-dot">.</span>
         </h1>
 
-        <p className="hero__tagline fade-up" style={{ animationDelay: '0.13s' }}>
+        <p className="hero__tagline fade-up" style={{ animationDelay: '0.08s' }}>
           Full Stack Dev&nbsp;&nbsp;·&nbsp;&nbsp;Social Media&nbsp;&nbsp;·&nbsp;&nbsp;UX/UI
         </p>
 
-        <div className="hero__row fade-up" style={{ animationDelay: '0.18s' }}>
+        <div className="hero__row fade-up" style={{ animationDelay: '0.14s' }}>
           <div className="hero__social">
             {[
-              { href:'https://github.com/VanuchoLanga',                                 icon:'fab fa-github' },
-              { href:'https://www.linkedin.com/in/silvano-de-joaquim-langa-7354803b7',  icon:'fab fa-linkedin-in' },
-              { href:'https://www.instagram.com/silvanoolangaa/',                        icon:'fab fa-instagram' },
-              { href:'https://wa.me/message/UJZ7LIIHHUXPI1',                            icon:'fab fa-whatsapp' },
-              { href:'https://www.behance.net/silvanolanga',                             icon:'fab fa-behance' },
+              { href:'https://github.com/VanuchoLanga',                                icon:'fab fa-github' },
+              { href:'https://www.linkedin.com/in/silvano-de-joaquim-langa-7354803b7', icon:'fab fa-linkedin-in' },
+              { href:'https://www.instagram.com/silvanoolangaa/',                       icon:'fab fa-instagram' },
+              { href:'https://wa.me/message/UJZ7LIIHHUXPI1',                           icon:'fab fa-whatsapp' },
+              { href:'https://www.behance.net/silvanolanga',                            icon:'fab fa-behance' },
             ].map(s => (
               <a key={s.icon} href={s.href} target="_blank" rel="noopener" className="hero__social-icon">
                 <i className={s.icon} />
               </a>
             ))}
           </div>
-          <a href="/silvano-langa-cv-v26.pdf" download className="hero__cv-btn">
-            <i className="fas fa-download" /> Baixar CV
+          <a href="/silvano-langa-cv-v26.pdf" download className="hero__cv-link">
+            <i className="fas fa-download" /> cv
           </a>
         </div>
 
-        <div className="hero__scroll fade-up" style={{ animationDelay: '0.24s' }}>
+        <div className="hero__scroll fade-up" style={{ animationDelay: '0.2s' }}>
           <span>scroll</span>
           <div className="hero__scroll-line" />
         </div>
