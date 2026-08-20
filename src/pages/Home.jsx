@@ -23,50 +23,62 @@ function Hero() {
     <section className="hero">
       <div className="hero__bg" />
       <div className="hero__bg-overlay" />
-      <div className="container hero__container">
-        <div className="hero__photo fade-up">
-          <img src="/assets/silva.png" alt="Silvano Langa" />
-          <div className="hero__status">
-            <span className="hero__status-dot" />
-            disponível
+      <div className="container hero__grid">
+
+        {/* LEFT */}
+        <div className="hero__left">
+          <div className="hero__photo fade-up">
+            <img src="/assets/silva.png" alt="Silvano Langa" />
+            <div className="hero__status">
+              <span className="hero__status-dot" />
+              disponível
+            </div>
+          </div>
+
+          <h1 className="hero__name fade-up" style={{ animationDelay: '0.05s' }}>
+            Silvano<br />Langa
+          </h1>
+
+          <p className="hero__tagline fade-up" style={{ animationDelay: '0.1s' }}>
+            Full Stack Dev.&nbsp;&nbsp;Social Media&nbsp;&nbsp;UX/UI
+          </p>
+
+          <div className="hero__bottom fade-up" style={{ animationDelay: '0.15s' }}>
+            <div className="hero__social">
+              <a href="https://github.com/VanuchoLanga" target="_blank" rel="noopener" aria-label="GitHub">
+                <i className="fab fa-github" />
+              </a>
+              <a href="https://www.linkedin.com/in/silvano-de-joaquim-langa-7354803b7" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <i className="fab fa-linkedin-in" />
+              </a>
+              <a href="https://www.instagram.com/silvanoolangaa/" target="_blank" rel="noopener" aria-label="Instagram">
+                <i className="fab fa-instagram" />
+              </a>
+              <a href="https://wa.me/message/UJZ7LIIHHUXPI1" target="_blank" rel="noopener" aria-label="WhatsApp">
+                <i className="fab fa-whatsapp" />
+              </a>
+              <a href="https://www.behance.net/silvanolanga" target="_blank" rel="noopener" aria-label="Behance">
+                <i className="fab fa-behance" />
+              </a>
+            </div>
+            <a href="/silvano-langa-cv-v26.pdf" download className="hero__cv-btn">
+              <i className="fas fa-download" /> Baixar CV
+            </a>
+          </div>
+
+          <div className="hero__scroll fade-up" style={{ animationDelay: '0.2s' }}>
+            <span>scroll</span>
+            <div className="hero__scroll-line" />
           </div>
         </div>
 
-        <h1 className="hero__name fade-up" style={{ animationDelay: '0.05s' }}>
-          Silvano Langa
-        </h1>
-
-        <p className="hero__tagline fade-up" style={{ animationDelay: '0.1s' }}>
-          Full Stack Developer · UX/UI Designer · Social Media
-        </p>
-
-        <nav className="hero__links fade-up" style={{ animationDelay: '0.15s' }}>
-          <a href="#about" className="hero__btn">sobre</a>
-          <a href="#experience" className="hero__btn">experiência</a>
-          <a href="#projects" className="hero__btn">projectos</a>
-          <a href="#contact" className="hero__btn">contacto</a>
-          <a href="/silvano-langa-cv-v26.pdf" download className="hero__btn hero__btn--green">
-            <i className="fas fa-download" /> cv
-          </a>
-        </nav>
-
-        <div className="hero__social fade-up" style={{ animationDelay: '0.2s' }}>
-          <a href="https://github.com/VanuchoLanga" target="_blank" rel="noopener" aria-label="GitHub">
-            <i className="fab fa-github" />
-          </a>
-          <a href="www.linkedin.com/in/silvano-de-joaquim-langa-7354803b7" target="_blank" rel="noopener" aria-label="LinkedIn">
-            <i className="fab fa-linkedin-in" />
-          </a>
-          <a href="https://www.instagram.com/silvanoolangaa/" target="_blank" rel="noopener" aria-label="Instagram">
-            <i className="fab fa-instagram" />
-          </a>
-          <a href="https://wa.me/message/UJZ7LIIHHUXPI1" target="_blank" rel="noopener" aria-label="WhatsApp">
-            <i className="fab fa-whatsapp" />
-          </a>
-          <a href="https://www.behance.net/silvanolanga" target="_blank" rel="noopener" aria-label="Behance">
-            <i className="fab fa-behance" />
-          </a>
+        {/* RIGHT — photo */}
+        <div className="hero__right fade-up" style={{ animationDelay: '0.1s' }}>
+          <div className="hero__img-wrap">
+            <img src="/assets/silva.png" alt="Silvano Langa" className="hero__img-full" />
+          </div>
         </div>
+
       </div>
     </section>
   )
