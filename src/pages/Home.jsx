@@ -21,59 +21,46 @@ function useReveal() {
 function Hero() {
   return (
     <section className="hero">
-      <div className="hero__bg" />
-      <div className="hero__bg-overlay" />
-      <div className="container hero__grid">
+      <div className="hero__bg-photo" />
+      <div className="hero__bg-gradient" />
 
-        {/* LEFT */}
-        <div className="hero__left">
-          <div className="hero__available fade-up">
-          <span className="hero__status-dot" />
-          disponível
+      <div className="container hero__content">
+
+        <div className="hero__badge fade-up">
+          <span className="hero__badge-dot" />
+          disponível para projectos
         </div>
 
-          <h1 className="hero__name fade-up" style={{ animationDelay: '0.05s' }}>
-            Silvano<br />Langa
-          </h1>
+        <h1 className="hero__name fade-up" style={{ animationDelay: '0.08s' }}>
+          Silvano<span className="hero__name-dot">.</span>
+        </h1>
 
-          <p className="hero__tagline fade-up" style={{ animationDelay: '0.1s' }}>
-            Full Stack Dev.&nbsp;&nbsp;Social Media&nbsp;&nbsp;UX/UI
-          </p>
+        <p className="hero__tagline fade-up" style={{ animationDelay: '0.13s' }}>
+          Full Stack Dev&nbsp;&nbsp;·&nbsp;&nbsp;Social Media&nbsp;&nbsp;·&nbsp;&nbsp;UX/UI
+        </p>
 
-          <div className="hero__bottom fade-up" style={{ animationDelay: '0.15s' }}>
-            <div className="hero__social">
-              <a href="https://github.com/VanuchoLanga" target="_blank" rel="noopener" aria-label="GitHub">
-                <i className="fab fa-github" />
+        <div className="hero__row fade-up" style={{ animationDelay: '0.18s' }}>
+          <div className="hero__social">
+            {[
+              { href:'https://github.com/VanuchoLanga',                                 icon:'fab fa-github' },
+              { href:'https://www.linkedin.com/in/silvano-de-joaquim-langa-7354803b7',  icon:'fab fa-linkedin-in' },
+              { href:'https://www.instagram.com/silvanoolangaa/',                        icon:'fab fa-instagram' },
+              { href:'https://wa.me/message/UJZ7LIIHHUXPI1',                            icon:'fab fa-whatsapp' },
+              { href:'https://www.behance.net/silvanolanga',                             icon:'fab fa-behance' },
+            ].map(s => (
+              <a key={s.icon} href={s.href} target="_blank" rel="noopener" className="hero__social-icon">
+                <i className={s.icon} />
               </a>
-              <a href="https://www.linkedin.com/in/silvano-de-joaquim-langa-7354803b7" target="_blank" rel="noopener" aria-label="LinkedIn">
-                <i className="fab fa-linkedin-in" />
-              </a>
-              <a href="https://www.instagram.com/silvanoolangaa/" target="_blank" rel="noopener" aria-label="Instagram">
-                <i className="fab fa-instagram" />
-              </a>
-              <a href="https://wa.me/message/UJZ7LIIHHUXPI1" target="_blank" rel="noopener" aria-label="WhatsApp">
-                <i className="fab fa-whatsapp" />
-              </a>
-              <a href="https://www.behance.net/silvanolanga" target="_blank" rel="noopener" aria-label="Behance">
-                <i className="fab fa-behance" />
-              </a>
-            </div>
-            <a href="/silvano-langa-cv-v26.pdf" download className="hero__cv-btn">
-              <i className="fas fa-download" /> Baixar CV
-            </a>
+            ))}
           </div>
-
-          <div className="hero__scroll fade-up" style={{ animationDelay: '0.2s' }}>
-            <span>scroll</span>
-            <div className="hero__scroll-line" />
-          </div>
+          <a href="/silvano-langa-cv-v26.pdf" download className="hero__cv-btn">
+            <i className="fas fa-download" /> Baixar CV
+          </a>
         </div>
 
-        {/* RIGHT — photo */}
-        <div className="hero__right fade-up" style={{ animationDelay: '0.1s' }}>
-          <div className="hero__img-wrap">
-            <img src="/assets/silva.png" alt="Silvano Langa" className="hero__img-full" />
-          </div>
+        <div className="hero__scroll fade-up" style={{ animationDelay: '0.24s' }}>
+          <span>scroll</span>
+          <div className="hero__scroll-line" />
         </div>
 
       </div>
