@@ -27,13 +27,10 @@ function Hero() {
 
         {/* LEFT */}
         <div className="hero__left">
-          <div className="hero__photo fade-up">
-            <img src="/assets/silva.png" alt="Silvano Langa" />
-            <div className="hero__status">
-              <span className="hero__status-dot" />
-              disponível
-            </div>
-          </div>
+          <div className="hero__available fade-up">
+          <span className="hero__status-dot" />
+          disponível
+        </div>
 
           <h1 className="hero__name fade-up" style={{ animationDelay: '0.05s' }}>
             Silvano<br />Langa
