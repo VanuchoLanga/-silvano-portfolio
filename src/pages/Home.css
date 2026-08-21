@@ -203,25 +203,159 @@
 
 /* ══ PROJECTS — HORIZONTAL CAROUSEL ═══════════ */
 .projects-section {
-  padding: 5rem 0 0;
+  padding: 5rem 0 4rem;
 }
 
 .projects-header {
+  margin-bottom: 2rem;
+}
+
+/* Track */
+.projects-track {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 0 clamp(1.25rem, 4vw, 3rem) 2rem;
+}
+
+.projects-track::-webkit-scrollbar { display: none; }
+
+/* Card — same width as before: 3 visible at once on desktop */
+.pcard-h {
+  flex: 0 0 calc(33.333% - 1rem);
+  max-width: 380px;
+  min-width: 260px;
+  scroll-snap-align: start;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s var(--ease);
+}
+
+.pcard-h:hover { transform: translateY(-4px); }
+
+/* Image */
+.pcard-h__img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/10;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+}
+
+.pcard-h__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s var(--ease), filter 0.3s;
+  filter: brightness(0.9) saturate(0.85);
+}
+
+.pcard-h:hover .pcard-h__img {
+  transform: scale(1.04);
+  filter: brightness(1) saturate(1);
+}
+
+.pcard-h__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(6,6,8,0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.25s;
+  backdrop-filter: blur(2px);
+}
+
+.pcard-h:hover .pcard-h__overlay { opacity: 1; }
+
+.pcard-h__overlay span {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--green);
+  border: 1px solid var(--green);
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+}
+
+/* Body */
+.pcard-h__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0 0.1rem;
+}
+
+.pcard-h__meta {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 2.5rem;
+}
+
+.pcard-h__cat {
+  font-size: 0.62rem;
+  color: var(--green);
+  letter-spacing: 0.06em;
+}
+
+.pcard-h__year {
+  font-size: 0.62rem;
+  color: var(--text-3);
+}
+
+.pcard-h__title {
+  font-size: 0.97rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  transition: color 0.15s;
+}
+
+.pcard-h:hover .pcard-h__title { color: var(--green); }
+
+.pcard-h__tagline {
+  font-size: 0.8rem;
+  color: var(--text-2);
+  line-height: 1.6;
+  text-align: left;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.pcard-h__tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.25rem;
+}
+
+/* Dots */
+.projects-dots-wrap {
+  margin-top: 1.5rem;
 }
 
 .projects-dots {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.4rem;
 }
 
 .projects-dot {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
   background: var(--border-h);
   border: none;
@@ -232,170 +366,23 @@
 
 .projects-dot.active {
   background: var(--green);
-  width: 20px;
+  width: 18px;
   border-radius: 3px;
 }
 
-/* Scrollable track — full width, no container */
-.projects-track {
-  display: flex;
-  gap: 0;
-  overflow-x: auto;
-  overflow-y: hidden;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  cursor: grab;
-  padding-bottom: 5rem;
-}
-
-.projects-track:active { cursor: grabbing; }
-.projects-track::-webkit-scrollbar { display: none; }
-
-/* Card */
-.pcard-h {
-  flex: 0 0 80vw;
-  max-width: 900px;
-  min-width: 320px;
-  scroll-snap-align: center;
-  display: flex;
-  flex-direction: column;
-  text-decoration: none;
-  color: inherit;
-  margin-left: clamp(1.25rem, 4vw, 3rem);
-  transition: transform 0.3s var(--ease);
-  user-select: none;
-}
-
-.pcard-h:last-child {
-  margin-right: clamp(1.25rem, 4vw, 3rem);
-}
-
-.pcard-h:hover { transform: translateY(-4px); }
-
-/* Image */
-.pcard-h__img-wrap {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border-radius: 12px;
-  overflow: hidden;
-  margin-bottom: 1.5rem;
-}
-
-.pcard-h__img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.5s var(--ease), filter 0.3s;
-  filter: brightness(0.88) saturate(0.85);
-}
-
-.pcard-h:hover .pcard-h__img {
-  transform: scale(1.03);
-  filter: brightness(1) saturate(1);
-}
-
-.pcard-h__img-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(6,6,8,0.5) 0%, transparent 50%);
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.pcard-h:hover .pcard-h__img-overlay { opacity: 1; }
-
-/* Body */
-.pcard-h__body {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  padding: 0 0.25rem;
-}
-
-.pcard-h__meta {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.pcard-h__num {
-  font-size: 0.62rem;
-  color: var(--green);
-  letter-spacing: 0.12em;
-}
-
-.pcard-h__cat {
-  font-size: 0.65rem;
-  color: var(--text-3);
-  letter-spacing: 0.08em;
-  flex: 1;
-}
-
-.pcard-h__year {
-  font-size: 0.65rem;
-  color: var(--text-3);
-}
-
-.pcard-h__title {
-  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-  font-weight: 600;
-  color: var(--text);
-  line-height: 1.25;
-  letter-spacing: -0.02em;
-  transition: color 0.15s;
-}
-
-.pcard-h:hover .pcard-h__title { color: var(--green); }
-
-.pcard-h__tagline {
-  font-size: 0.82rem;
-  color: var(--text-2);
-  line-height: 1.65;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-align: left;
-}
-
-.pcard-h__tools {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem;
-  margin-top: 0.25rem;
-}
-
-.pcard-h__cta {
-  font-family: var(--mono);
-  font-size: 0.7rem;
-  color: var(--text-3);
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  margin-top: 0.5rem;
-  transition: color 0.15s, gap 0.2s;
-}
-
-.pcard-h:hover .pcard-h__cta {
-  color: var(--green);
-  gap: 0.7rem;
-}
-
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .pcard-h {
-    flex: 0 0 88vw;
+    flex: 0 0 calc(50% - 0.75rem);
+    max-width: 100%;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 580px) {
   .pcard-h {
-    flex: 0 0 92vw;
+    flex: 0 0 85vw;
+    max-width: 100%;
   }
-  .pcard-h__title { font-size: 1rem; }
 }
 
 /* ══ ABOUT ═════════════════════════════════════ */

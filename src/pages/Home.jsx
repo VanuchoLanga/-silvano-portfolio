@@ -73,101 +73,117 @@ function Hero() {
 function Projects() {
   const trackRef = useRef(null)
   const [active, setActive] = useState(0)
-  const [isDragging, setIsDragging] = useState(false)
-  const dragStart = useRef(0)
-  const scrollStart = useRef(0)
+  const autoRef = useRef(null)
 
-  // Drag to scroll — desktop
-  const onMouseDown = e => {
-    setIsDragging(false)
-    dragStart.current = e.clientX
-    scrollStart.current = trackRef.current.scrollLeft
-    const onMove = ev => {
-      const dx = ev.clientX - dragStart.current
-      if (Math.abs(dx) > 5) setIsDragging(true)
-      trackRef.current.scrollLeft = scrollStart.current - dx
+  // Auto-scroll every 4 seconds
+  useEffect(() => {
+    const start = () => {
+      autoRef.current = setInterval(() => {
+        const t = trackRef.current
+        if (!t) return
+        const cardW = t.querySelector('.pcard-h')?.offsetWidth + 24 || 400
+        const maxScroll = t.scrollWidth - t.clientWidth
+        if (t.scrollLeft >= maxScroll - 10) {
+          t.scrollTo({ left: 0, behavior: 'smooth' })
+        } else {
+          t.scrollBy({ left: cardW, behavior: 'smooth' })
+        }
+      }, 4000)
     }
-    const onUp = () => {
-      window.removeEventListener('mousemove', onMove)
-      window.removeEventListener('mouseup', onUp)
-      setTimeout(() => setIsDragging(false), 0)
-    }
-    window.addEventListener('mousemove', onMove)
-    window.addEventListener('mouseup', onUp)
+    start()
+    return () => clearInterval(autoRef.current)
+  }, [])
+
+  // Pause auto-scroll on hover
+  const pause = () => clearInterval(autoRef.current)
+  const resume = () => {
+    clearInterval(autoRef.current)
+    autoRef.current = setInterval(() => {
+      const t = trackRef.current
+      if (!t) return
+      const cardW = t.querySelector('.pcard-h')?.offsetWidth + 24 || 400
+      const maxScroll = t.scrollWidth - t.clientWidth
+      if (t.scrollLeft >= maxScroll - 10) {
+        t.scrollTo({ left: 0, behavior: 'smooth' })
+      } else {
+        t.scrollBy({ left: cardW, behavior: 'smooth' })
+      }
+    }, 4000)
   }
 
-  // Update active dot on scroll
+  // Wheel scroll horizontal
+  const onWheel = e => {
+    e.preventDefault()
+    trackRef.current.scrollBy({ left: e.deltaY * 2, behavior: 'auto' })
+  }
+
+  // Update dots on scroll
   const onScroll = () => {
     const t = trackRef.current
     if (!t) return
-    const idx = Math.round(t.scrollLeft / (t.scrollWidth / projects.length))
+    const cardW = t.querySelector('.pcard-h')?.offsetWidth + 24 || 400
+    const idx = Math.round(t.scrollLeft / cardW)
     setActive(Math.min(idx, projects.length - 1))
-  }
-
-  // Click dot
-  const scrollTo = i => {
-    const t = trackRef.current
-    const cardW = t.scrollWidth / projects.length
-    t.scrollTo({ left: cardW * i, behavior: 'smooth' })
   }
 
   return (
     <section className="projects-section" id="projects">
-      {/* Header */}
       <div className="container projects-header">
-        <p className="sec-label">projectos</p>
-        <div className="projects-dots">
-          {projects.map((_, i) => (
-            <button
-              key={i}
-              className={`projects-dot ${i === active ? 'active' : ''}`}
-              onClick={() => scrollTo(i)}
-              aria-label={`projecto ${i + 1}`}
-            />
-          ))}
-        </div>
+        <p className="sec-label">projectos seleccionados</p>
       </div>
 
-      {/* Horizontal track */}
       <div
         className="projects-track"
         ref={trackRef}
-        onMouseDown={onMouseDown}
+        onWheel={onWheel}
         onScroll={onScroll}
+        onMouseEnter={pause}
+        onMouseLeave={resume}
       >
         {projects.map((p, i) => (
           <Link
             key={p.id}
-            to={isDragging ? '#' : `/project/${p.id}`}
-            onClick={e => { if (isDragging) e.preventDefault() }}
+            to={`/project/${p.id}`}
             className="pcard-h"
           >
-            {/* Image */}
             <div className="pcard-h__img-wrap">
               <img src={p.cover} alt={p.title} className="pcard-h__img" loading="lazy" />
-              <div className="pcard-h__img-overlay" />
+              <div className="pcard-h__overlay">
+                <span>ver case study →</span>
+              </div>
             </div>
-
-            {/* Info */}
             <div className="pcard-h__body">
               <div className="pcard-h__meta">
-                <span className="pcard-h__num t-mono">{String(i + 1).padStart(2,'0')}</span>
                 <span className="pcard-h__cat t-mono">{p.category}</span>
                 <span className="pcard-h__year t-mono">{p.year}</span>
               </div>
               <h3 className="pcard-h__title">{p.title}</h3>
               <p className="pcard-h__tagline">{p.tagline}</p>
               <div className="pcard-h__tools">
-                {p.tools.slice(0, 4).map(t => (
+                {p.tools.slice(0, 3).map(t => (
                   <span key={t} className="tag">{t}</span>
                 ))}
               </div>
-              <span className="pcard-h__cta">
-                ver case study <i className="fas fa-arrow-right" />
-              </span>
             </div>
           </Link>
         ))}
+      </div>
+
+      {/* Dots */}
+      <div className="container projects-dots-wrap">
+        <div className="projects-dots">
+          {projects.map((_, i) => (
+            <button
+              key={i}
+              className={`projects-dot ${i === active ? 'active' : ''}`}
+              onClick={() => {
+                const t = trackRef.current
+                const cardW = t.querySelector('.pcard-h')?.offsetWidth + 24 || 400
+                t.scrollTo({ left: cardW * i, behavior: 'smooth' })
+              }}
+            />
+          ))}
+        </div>
       </div>
     </section>
   )
