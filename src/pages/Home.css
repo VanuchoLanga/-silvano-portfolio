@@ -167,7 +167,7 @@
 @media (max-width: 768px) {
   .hero__bg-photo {
     background-image: url('/assets/hero-desktop.png');
-    background-position: center top;
+    background-position: center;
   }
   .hero__bg-gradient {
     background:
