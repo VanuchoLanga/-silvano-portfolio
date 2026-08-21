@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { projects, experiences, stack } from '../data'
 import './Home.css'
@@ -71,48 +71,103 @@ function Hero() {
 
 /* ── PROJECTS ──────────────────────────── */
 function Projects() {
+  const trackRef = useRef(null)
+  const [active, setActive] = useState(0)
+  const [isDragging, setIsDragging] = useState(false)
+  const dragStart = useRef(0)
+  const scrollStart = useRef(0)
+
+  // Drag to scroll — desktop
+  const onMouseDown = e => {
+    setIsDragging(false)
+    dragStart.current = e.clientX
+    scrollStart.current = trackRef.current.scrollLeft
+    const onMove = ev => {
+      const dx = ev.clientX - dragStart.current
+      if (Math.abs(dx) > 5) setIsDragging(true)
+      trackRef.current.scrollLeft = scrollStart.current - dx
+    }
+    const onUp = () => {
+      window.removeEventListener('mousemove', onMove)
+      window.removeEventListener('mouseup', onUp)
+      setTimeout(() => setIsDragging(false), 0)
+    }
+    window.addEventListener('mousemove', onMove)
+    window.addEventListener('mouseup', onUp)
+  }
+
+  // Update active dot on scroll
+  const onScroll = () => {
+    const t = trackRef.current
+    if (!t) return
+    const idx = Math.round(t.scrollLeft / (t.scrollWidth / projects.length))
+    setActive(Math.min(idx, projects.length - 1))
+  }
+
+  // Click dot
+  const scrollTo = i => {
+    const t = trackRef.current
+    const cardW = t.scrollWidth / projects.length
+    t.scrollTo({ left: cardW * i, behavior: 'smooth' })
+  }
+
   return (
-    <section className="section projects" id="projects">
-      <div className="container">
-        <div className="projects__header reveal">
-          <p className="sec-label" style={{marginBottom:0}}>projectos seleccionados</p>
-        </div>
-        <div className="projects__cards">
-          {projects.slice(0, 3).map((p, i) => (
-            <Link
-              key={p.id}
-              to={`/project/${p.id}`}
-              className="pcard reveal"
-              style={{ transitionDelay: `${i * 0.1}s` }}
-            >
-              <div className="pcard__img-wrap">
-                <img src={p.cover} alt={p.title} className="pcard__img" loading="lazy" />
-              </div>
-              <div className="pcard__body">
-                <span className="pcard__cat-text">{p.category}</span>
-                <div className="pcard__top">
-                  <h3 className="pcard__title">{p.title}</h3>
-                  <span className="pcard__year t-mono">{p.year}</span>
-                </div>
-                <p className="pcard__tagline">{p.tagline}</p>
-                <div className="pcard__tools">
-                  {p.tools.slice(0, 3).map(t => (
-                    <span key={t} className="tag">{t}</span>
-                  ))}
-                  {p.tools.length > 3 && (
-                    <span className="tag">+{p.tools.length - 3}</span>
-                  )}
-                </div>
-                <span className="pcard__cta">ver case study →</span>
-              </div>
-            </Link>
+    <section className="projects-section" id="projects">
+      {/* Header */}
+      <div className="container projects-header">
+        <p className="sec-label">projectos</p>
+        <div className="projects-dots">
+          {projects.map((_, i) => (
+            <button
+              key={i}
+              className={`projects-dot ${i === active ? 'active' : ''}`}
+              onClick={() => scrollTo(i)}
+              aria-label={`projecto ${i + 1}`}
+            />
           ))}
         </div>
-        <div className="projects__more reveal">
-          <Link to="/projects" className="btn">
-            ver todos os projectos ({projects.length}) →
+      </div>
+
+      {/* Horizontal track */}
+      <div
+        className="projects-track"
+        ref={trackRef}
+        onMouseDown={onMouseDown}
+        onScroll={onScroll}
+      >
+        {projects.map((p, i) => (
+          <Link
+            key={p.id}
+            to={isDragging ? '#' : `/project/${p.id}`}
+            onClick={e => { if (isDragging) e.preventDefault() }}
+            className="pcard-h"
+          >
+            {/* Image */}
+            <div className="pcard-h__img-wrap">
+              <img src={p.cover} alt={p.title} className="pcard-h__img" loading="lazy" />
+              <div className="pcard-h__img-overlay" />
+            </div>
+
+            {/* Info */}
+            <div className="pcard-h__body">
+              <div className="pcard-h__meta">
+                <span className="pcard-h__num t-mono">{String(i + 1).padStart(2,'0')}</span>
+                <span className="pcard-h__cat t-mono">{p.category}</span>
+                <span className="pcard-h__year t-mono">{p.year}</span>
+              </div>
+              <h3 className="pcard-h__title">{p.title}</h3>
+              <p className="pcard-h__tagline">{p.tagline}</p>
+              <div className="pcard-h__tools">
+                {p.tools.slice(0, 4).map(t => (
+                  <span key={t} className="tag">{t}</span>
+                ))}
+              </div>
+              <span className="pcard-h__cta">
+                ver case study <i className="fas fa-arrow-right" />
+              </span>
+            </div>
           </Link>
-        </div>
+        ))}
       </div>
     </section>
   )
