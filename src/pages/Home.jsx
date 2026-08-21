@@ -43,6 +43,7 @@ function Hero() {
               { href:'https://www.instagram.com/silvanoolangaa/',                       icon:'fab fa-instagram' },
               { href:'https://wa.me/message/UJZ7LIIHHUXPI1',                           icon:'fab fa-whatsapp' },
               { href:'https://www.behance.net/silvanolanga',                            icon:'fab fa-behance' },
+              { href:'https://www.pinterest.com/SilvanooLangaa/',                            icon:'fab fa-piterest' },
             ].map(s => (
               <a key={s.icon} href={s.href} target="_blank" rel="noopener" className="hero__social-icon">
                 <i className={s.icon} />
