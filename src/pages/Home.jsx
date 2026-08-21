@@ -74,30 +74,44 @@ function Projects() {
   return (
     <section className="section projects" id="projects">
       <div className="container">
-        <p className="sec-label reveal">projectos seleccionados</p>
-        <div className="projects__grid">
-          {projects.map((p, i) => (
+        <div className="projects__header reveal">
+          <p className="sec-label" style={{marginBottom:0}}>projectos seleccionados</p>
+        </div>
+        <div className="projects__cards">
+          {projects.slice(0, 3).map((p, i) => (
             <Link
               key={p.id}
               to={`/project/${p.id}`}
-              className="pgrid-card reveal"
-              style={{ transitionDelay: `${i * 0.06}s` }}
+              className="pcard reveal"
+              style={{ transitionDelay: `${i * 0.1}s` }}
             >
-              <div className="pgrid-card__img-wrap">
-                <img src={p.cover} alt={p.title} className="pgrid-card__img" loading="lazy" />
-                <div className="pgrid-card__overlay">
-                  <span>ver case study →</span>
-                </div>
+              <div className="pcard__img-wrap">
+                <img src={p.cover} alt={p.title} className="pcard__img" loading="lazy" />
               </div>
-              <div className="pgrid-card__body">
-                <div className="pgrid-card__meta">
-                  <span className="pgrid-card__cat t-mono">{p.category}</span>
-                  <span className="pgrid-card__year t-mono">{p.year}</span>
+              <div className="pcard__body">
+                <span className="pcard__cat-text">{p.category}</span>
+                <div className="pcard__top">
+                  <h3 className="pcard__title">{p.title}</h3>
+                  <span className="pcard__year t-mono">{p.year}</span>
                 </div>
-                <h3 className="pgrid-card__title">{p.title}</h3>
+                <p className="pcard__tagline">{p.tagline}</p>
+                <div className="pcard__tools">
+                  {p.tools.slice(0, 3).map(t => (
+                    <span key={t} className="tag">{t}</span>
+                  ))}
+                  {p.tools.length > 3 && (
+                    <span className="tag">+{p.tools.length - 3}</span>
+                  )}
+                </div>
+                <span className="pcard__cta">ver case study →</span>
               </div>
             </Link>
           ))}
+        </div>
+        <div className="projects__more reveal">
+          <Link to="/projects" className="btn">
+            ver todos os projectos ({projects.length}) →
+          </Link>
         </div>
       </div>
     </section>
