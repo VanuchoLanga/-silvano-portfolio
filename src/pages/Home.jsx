@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { projects, experiences, stack } from '../data'
 import './Home.css'
@@ -71,117 +71,37 @@ function Hero() {
 
 /* ── PROJECTS ──────────────────────────── */
 function Projects() {
-  const trackRef = useRef(null)
-  const [active, setActive] = useState(0)
-  const autoRef = useRef(null)
-
-  // Auto-scroll every 4 seconds
-  useEffect(() => {
-    const start = () => {
-      autoRef.current = setInterval(() => {
-        const t = trackRef.current
-        if (!t) return
-        const cardW = t.querySelector('.pcard-h')?.offsetWidth + 24 || 400
-        const maxScroll = t.scrollWidth - t.clientWidth
-        if (t.scrollLeft >= maxScroll - 10) {
-          t.scrollTo({ left: 0, behavior: 'smooth' })
-        } else {
-          t.scrollBy({ left: cardW, behavior: 'smooth' })
-        }
-      }, 4000)
-    }
-    start()
-    return () => clearInterval(autoRef.current)
-  }, [])
-
-  // Pause auto-scroll on hover
-  const pause = () => clearInterval(autoRef.current)
-  const resume = () => {
-    clearInterval(autoRef.current)
-    autoRef.current = setInterval(() => {
-      const t = trackRef.current
-      if (!t) return
-      const cardW = t.querySelector('.pcard-h')?.offsetWidth + 24 || 400
-      const maxScroll = t.scrollWidth - t.clientWidth
-      if (t.scrollLeft >= maxScroll - 10) {
-        t.scrollTo({ left: 0, behavior: 'smooth' })
-      } else {
-        t.scrollBy({ left: cardW, behavior: 'smooth' })
-      }
-    }, 4000)
-  }
-
-  // Wheel scroll horizontal
-  const onWheel = e => {
-    e.preventDefault()
-    trackRef.current.scrollBy({ left: e.deltaY * 2, behavior: 'auto' })
-  }
-
-  // Update dots on scroll
-  const onScroll = () => {
-    const t = trackRef.current
-    if (!t) return
-    const cardW = t.querySelector('.pcard-h')?.offsetWidth + 24 || 400
-    const idx = Math.round(t.scrollLeft / cardW)
-    setActive(Math.min(idx, projects.length - 1))
-  }
+  const [hovered, setHovered] = useState(null)
 
   return (
-    <section className="projects-section" id="projects">
-      <div className="container projects-header">
-        <p className="sec-label">projectos seleccionados</p>
-      </div>
-
-      <div
-        className="projects-track"
-        ref={trackRef}
-        onWheel={onWheel}
-        onScroll={onScroll}
-        onMouseEnter={pause}
-        onMouseLeave={resume}
-      >
-        {projects.map((p, i) => (
-          <Link
-            key={p.id}
-            to={`/project/${p.id}`}
-            className="pcard-h"
-          >
-            <div className="pcard-h__img-wrap">
-              <img src={p.cover} alt={p.title} className="pcard-h__img" loading="lazy" />
-              <div className="pcard-h__overlay">
-                <span>ver case study →</span>
+    <section className="section projects" id="projects">
+      <div className="container">
+        <p className="sec-label reveal">projectos seleccionados</p>
+        <div className="projects__list">
+          {projects.map((p, i) => (
+            <Link
+              key={p.id}
+              to={`/project/${p.id}`}
+              className={`project-row reveal ${hovered !== null && hovered !== i ? 'dimmed' : ''}`}
+              style={{ transitionDelay: `${i * 0.04}s` }}
+              onMouseEnter={() => setHovered(i)}
+              onMouseLeave={() => setHovered(null)}
+            >
+              <div className="project-row__left">
+                <span className="project-row__num t-mono">{String(i + 1).padStart(2, '0')}</span>
+                <div>
+                  <span className="project-row__title">{p.title}</span>
+                  <span className="project-row__tag t-mono">{p.category}</span>
+                </div>
               </div>
-            </div>
-            <div className="pcard-h__body">
-              <div className="pcard-h__meta">
-                <span className="pcard-h__cat t-mono">{p.category}</span>
-                <span className="pcard-h__year t-mono">{p.year}</span>
+              <div className="project-row__right">
+                <span className="project-row__year t-mono">{p.year}</span>
+                <span className="project-row__arrow">→</span>
               </div>
-              <h3 className="pcard-h__title">{p.title}</h3>
-              <p className="pcard-h__tagline">{p.tagline}</p>
-              <div className="pcard-h__tools">
-                {p.tools.slice(0, 3).map(t => (
-                  <span key={t} className="tag">{t}</span>
-                ))}
+              <div className="project-row__preview">
+                <img src={p.cover} alt={p.title} loading="lazy" />
               </div>
-            </div>
-          </Link>
-        ))}
-      </div>
-
-      {/* Dots */}
-      <div className="container projects-dots-wrap">
-        <div className="projects-dots">
-          {projects.map((_, i) => (
-            <button
-              key={i}
-              className={`projects-dot ${i === active ? 'active' : ''}`}
-              onClick={() => {
-                const t = trackRef.current
-                const cardW = t.querySelector('.pcard-h')?.offsetWidth + 24 || 400
-                t.scrollTo({ left: cardW * i, behavior: 'smooth' })
-              }}
-            />
+            </Link>
           ))}
         </div>
       </div>
