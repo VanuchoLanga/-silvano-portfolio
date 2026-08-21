@@ -71,35 +71,30 @@ function Hero() {
 
 /* ── PROJECTS ──────────────────────────── */
 function Projects() {
-  const [hovered, setHovered] = useState(null)
-
   return (
     <section className="section projects" id="projects">
       <div className="container">
         <p className="sec-label reveal">projectos seleccionados</p>
-        <div className="projects__list">
+        <div className="projects__grid">
           {projects.map((p, i) => (
             <Link
               key={p.id}
               to={`/project/${p.id}`}
-              className={`project-row reveal ${hovered !== null && hovered !== i ? 'dimmed' : ''}`}
-              style={{ transitionDelay: `${i * 0.04}s` }}
-              onMouseEnter={() => setHovered(i)}
-              onMouseLeave={() => setHovered(null)}
+              className="pgrid-card reveal"
+              style={{ transitionDelay: `${i * 0.06}s` }}
             >
-              <div className="project-row__left">
-                <span className="project-row__num t-mono">{String(i + 1).padStart(2, '0')}</span>
-                <div>
-                  <span className="project-row__title">{p.title}</span>
-                  <span className="project-row__tag t-mono">{p.category}</span>
+              <div className="pgrid-card__img-wrap">
+                <img src={p.cover} alt={p.title} className="pgrid-card__img" loading="lazy" />
+                <div className="pgrid-card__overlay">
+                  <span>ver case study →</span>
                 </div>
               </div>
-              <div className="project-row__right">
-                <span className="project-row__year t-mono">{p.year}</span>
-                <span className="project-row__arrow">→</span>
-              </div>
-              <div className="project-row__preview">
-                <img src={p.cover} alt={p.title} loading="lazy" />
+              <div className="pgrid-card__body">
+                <div className="pgrid-card__meta">
+                  <span className="pgrid-card__cat t-mono">{p.category}</span>
+                  <span className="pgrid-card__year t-mono">{p.year}</span>
+                </div>
+                <h3 className="pgrid-card__title">{p.title}</h3>
               </div>
             </Link>
           ))}
