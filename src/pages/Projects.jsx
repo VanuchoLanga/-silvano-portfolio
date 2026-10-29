@@ -14,8 +14,8 @@ const CATEGORIES = [
 
 const ITEMS = [
   // ── FULL STACK ──────────────────────────────────────────────────
-  { id: 'f1', cat: 'fullstack', src: '/assets/legend-card.webp', label: 'Legend Segurança', client: 'Website Institucional', live: 'https://www.legendsegurancalda.co.mz/' },
-  { id: 'f2', cat: 'fullstack', src: '/assets/nexa-cover.webp',  label: 'NEXA E-commerce',  client: 'Plataforma de Saúde', live: 'https://www.nexastore.store/' },
+  { id: 'f1', cat: 'fullstack', src: '/assets/legend-site-card.webp', full: '/assets/legend-site-cover.webp', label: 'Legend Segurança', client: 'Website Institucional', live: 'https://www.legendsegurancalda.co.mz/' },
+  { id: 'f2', cat: 'fullstack', src: '/assets/nexa-site-card.webp', full: '/assets/nexa-site-cover.webp', label: 'NEXA E-commerce',  client: 'Plataforma de Saúde', live: 'https://www.nexastore.store/' },
   { id: 'f3', cat: 'fullstack', src: '/assets/electrolink-card.webp', full: '/assets/electrolink-cover.webp', label: 'ElectroLink', client: 'Site institucional + painel admin', live: 'https://electro-link-site.vercel.app', repo: 'https://github.com/VanuchoLanga/Electro-link-site' },
   { id: 'f4', cat: 'fullstack', src: '/assets/pontoaponto-card.webp', full: '/assets/pontoaponto-cover.webp', label: 'Ponto a Ponto Logística', client: 'Plataforma de gestão de importações', live: 'https://ponto-a-ponto-two.vercel.app', repo: 'https://github.com/VanuchoLanga/Ponto-a-ponto' },
   { id: 'f5', cat: 'fullstack', src: '/assets/mamaafrica-card.webp', full: '/assets/mamaafrica-cover.webp', label: 'Mamã África', client: 'E-commerce de cosmética · UX/UI', live: 'https://e-commerce-uxui.vercel.app', repo: 'https://github.com/VanuchoLanga/E-commerceUXUI' },
