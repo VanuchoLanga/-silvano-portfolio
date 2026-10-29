@@ -21,6 +21,7 @@ const ITEMS = [
   { id: 'f4', cat: 'fullstack', src: '/assets/pontoaponto-card.webp', full: '/assets/pontoaponto-cover.webp', label: 'Ponto a Ponto Logística', client: 'Plataforma de gestão de importações', live: 'https://ponto-a-ponto-two.vercel.app', repo: 'https://github.com/VanuchoLanga/Ponto-a-ponto' },
   { id: 'f5', cat: 'fullstack', src: '/assets/mamaafrica-card.webp', full: '/assets/mamaafrica-cover.webp', label: 'Mamã África', client: 'E-commerce de cosmética · UX/UI', live: 'https://e-commerce-uxui.vercel.app', repo: 'https://github.com/VanuchoLanga/E-commerceUXUI' },
   { id: 'f6', cat: 'fullstack', src: '/assets/briefing-card.webp', full: '/assets/briefing-cover.webp', label: 'Briefing Criativo', client: 'Formulário de identidade visual', live: 'https://briefing-agencia.vercel.app', repo: 'https://github.com/VanuchoLanga/Briefing-Agencia' },
+  { id: 'f8', cat: 'fullstack', src: '/assets/solaris-site-card.webp', full: '/assets/solaris-site-cover.webp', label: 'Solis Energia', client: 'Conceito · landing page de energia solar', live: 'https://solaris-landig-page.vercel.app', repo: 'https://github.com/VanuchoLanga/Solaris-landig-page' },
 
   // ── SOCIAL MEDIA (agrupado por cliente na tab Social) ────────────
   { id: 'kdesperta1', cat: 'social', subclient: 'K-Desperta', src: '/assets/social/kdesperta1.webp', label: 'K-Desperta' },
