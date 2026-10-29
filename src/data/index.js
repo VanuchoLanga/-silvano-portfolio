@@ -10,8 +10,8 @@ export const projects = [
     client: 'Legend Segurança Lda', role: 'Full Stack Developer', duration: '7 semanas',
     tools: ['Figma','React','Node.js','Tailwind','Mongo DB','Java'],
     liveUrl: 'https://www.legendsegurancalda.co.mz/',
-    overview: 'Desenvolvimento completo da presença digital da Legend Segurança — empresa moçambicana de segurança privada. O projecto abrangeu website institucional, SEO, configuração de domínio e plano de social media.',
-    problem: 'A empresa não tinha presença digital. Sem website, sem redes sociais estruturadas — perdia credibilidade e oportunidades de negócio face à concorrência.',
+    overview: 'Desenvolvimento completo da presença digital da Legend Segurança, empresa moçambicana de segurança privada. O projecto abrangeu website institucional, SEO, configuração de domínio e plano de social media.',
+    problem: 'A empresa não tinha presença digital. Sem website, sem redes sociais estruturadas, por isso perdia credibilidade e oportunidades de negócio face à concorrência.',
     process: [
       { step:'01', title:'Discovery & Estratégia', desc:'Levantamento de requisitos, análise de concorrentes e definição da arquitectura de informação.' },
       { step:'02', title:'UX/UI Design', desc:'Wireframes e design de alta fidelidade no Figma com identidade visual da empresa.' },
@@ -71,7 +71,7 @@ export const projects = [
     tools: ['HTML','CSS','JavaScript','Node.js','Express','MongoDB'],
     liveUrl: 'https://www.nexastore.store/',
     overview: 'Plataforma e-commerce de saúde e bem-estar para o mercado moçambicano com contas de cliente, painel admin com autenticação JWT e confirmações por email.',
-    problem: 'Ausência de uma plataforma digital de saúde adaptada ao contexto moçambicano — mercado inexplorado com alta procura.',
+    problem: 'Ausência de uma plataforma digital de saúde adaptada ao contexto moçambicano, um mercado inexplorado com alta procura.',
     process: [
       { step:'01', title:'Arquitectura', desc:'Definição da stack, estrutura de base de dados MongoDB e API REST com Express.' },
       { step:'02', title:'Backend', desc:'Sistema de autenticação JWT, painel admin, gestão de produtos e encomendas.' },
@@ -91,6 +91,7 @@ export const projects = [
   },
   {
     id: 'social-media',
+    draft: true, // conteúdo de exemplo: não aparece no site até ter dados reais
     title: 'K-Desperta Social Strategy',
     year: '2025',
     category: 'Social Media',
@@ -121,7 +122,8 @@ export const projects = [
   },
   {
     id: 'sigecap',
-    title: 'SiGeCat — Sistema de Catequese',
+    draft: true,
+    title: 'SiGeCat (Sistema de Catequese)',
     year: '2024',
     category: 'Desktop App · Java',
     tagline: 'Sistema de gestão paroquial para a Comunidade São Carlos Lwanga.',
@@ -130,7 +132,7 @@ export const projects = [
     client: 'Comunidade São Carlos Lwanga', role: 'Full Stack Developer', duration: '16 semanas',
     tools: ['Java','JavaFX','NetBeans','Maven','Gson','Apache POI','iText'],
     liveUrl: '#',
-    overview: 'Aplicação desktop JavaFX para gestão completa da catequese paroquial — alunos, grupos, presenças, sacramentos, pagamentos e avaliações.',
+    overview: 'Aplicação desktop JavaFX para gestão completa da catequese paroquial: alunos, grupos, presenças, sacramentos, pagamentos e avaliações.',
     problem: 'Gestão manual em papel causava perda de dados, dificuldade de consulta e ineficiência no acompanhamento dos catequizandos.',
     process: [
       { step:'01', title:'Levantamento', desc:'Reuniões com a comunidade para mapear todos os processos de gestão catequética.' },
@@ -151,7 +153,8 @@ export const projects = [
   },
   {
     id: 'brand-identity',
-    title: 'Criativismo — Brand & Web',
+    draft: true,
+    title: 'Criativismo: Brand & Web',
     year: '2024',
     category: 'Branding · Front-end',
     tagline: 'Identidade visual que posicionou a marca no premium.',
@@ -181,6 +184,8 @@ export const projects = [
   },
 ]
 
+export const publishedProjects = projects.filter(p => !p.draft)
+
 export const socials = [
   { href:'https://github.com/VanuchoLanga',                                 icon:'fab fa-github',      label:'GitHub',    sub:'VanuchoLanga' },
   { href:'https://www.linkedin.com/in/silvano-de-joaquim-langa-7354803b7', icon:'fab fa-linkedin-in', label:'LinkedIn',  sub:'Silvano Langa' },
@@ -191,9 +196,9 @@ export const socials = [
 ]
 
 export const experiences = [
-  { company:'K-Desperta', role:'Social Media & Designer', period:'2025 — Presente', type:'Full-Time', desc:'Gestão de redes sociais, materiais publicitários, identidade visual e peças de comunicação.', skills:['Meta Business Suite','Figma','ClickUp'] },
-  { company:'Freelance', role:'Designer Gráfico & Web Developer', period:'2019 — Presente', type:'Freelancer', desc:'Desenvolvimento web, sistemas de design e identidade visual para empresas moçambicanas, portuguesas e brasileiras.', skills:['React','Photoshop','Illustrator','InDesign','Java'] },
-  { company:'EPTC — Escola Profissional', role:'Formador (estagiário) de Design e Marketing', period:'2025', type:'Docência', desc:'Ministração de módulos de design gráfico e marketing digital para o ensino técnico-profissional.', skills:['Design Gráfico','Marketing Digital'] },
+  { company:'K-Desperta', role:'Social Media & Designer', period:'2025 - Presente', type:'Full-Time', desc:'Gestão de redes sociais, materiais publicitários, identidade visual e peças de comunicação.', skills:['Meta Business Suite','Figma','ClickUp'] },
+  { company:'Freelance', role:'Designer Gráfico & Web Developer', period:'2019 - Presente', type:'Freelancer', desc:'Desenvolvimento web, sistemas de design e identidade visual para empresas moçambicanas, portuguesas e brasileiras.', skills:['React','Photoshop','Illustrator','InDesign','Java'] },
+  { company:'EPTC, Escola Profissional', role:'Formador (estagiário) de Design e Marketing', period:'2025', type:'Docência', desc:'Ministração de módulos de design gráfico e marketing digital para o ensino técnico-profissional.', skills:['Design Gráfico','Marketing Digital'] },
   { company:'Rádio Comunitária de Manjacaze', role:'IT, Formador', period:'2022', type:'Docência', desc:'Ministração de módulos do pacote Microsoft Office (Word, Excel, PowerPoint).', skills:['IT Geral'] },
 ]
 

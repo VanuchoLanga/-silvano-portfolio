@@ -1,17 +1,19 @@
 import { useEffect } from 'react'
 import { useParams, Link, Navigate } from 'react-router-dom'
-import { projects } from '../data'
+import { projects, publishedProjects } from '../data'
 import './CaseStudy.css'
 
 export default function CaseStudy() {
   const { id } = useParams()
   const project = projects.find(p => p.id === id)
   useEffect(() => { window.scrollTo(0, 0) }, [id])
-  if (!project) return <Navigate to="/" replace />
+  if (!project || project.draft) return <Navigate to="/" replace />
 
-  const idx  = projects.findIndex(p => p.id === id)
-  const next = projects[(idx + 1) % projects.length]
-  const prev = projects[(idx - 1 + projects.length) % projects.length]
+  // anterior/próximo só entre projectos publicados
+  const list = publishedProjects
+  const idx  = Math.max(0, list.findIndex(p => p.id === id))
+  const next = list[(idx + 1) % list.length]
+  const prev = list[(idx - 1 + list.length) % list.length]
 
   return (
     <main className="cs" style={{ paddingTop: 'var(--nav-h)' }}>
@@ -51,7 +53,7 @@ export default function CaseStudy() {
             {project.liveUrl !== '#' && (
               <div className="cs-meta__item">
                 <a href={project.liveUrl} target="_blank" rel="noopener" className="cs-meta__link">
-                  ver site →
+                  ver site ao vivo ↗
                 </a>
               </div>
             )}

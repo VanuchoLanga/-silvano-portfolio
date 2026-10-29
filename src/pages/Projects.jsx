@@ -13,30 +13,45 @@ const CATEGORIES = [
 ]
 
 const ITEMS = [
-  // ── DESIGN GRÁFICO ──────────────────────────────────────────────
-  // (vazio — adiciona aqui as artes quando estiverem em /assets/)
-
   // ── FULL STACK ──────────────────────────────────────────────────
   { id: 'f1', cat: 'fullstack', src: '/assets/legend-card.webp', label: 'Legend Segurança', client: 'Website Institucional' },
-  { id: 'f2', cat: 'fullstack', src: '/assets/nexa-cover.webp',   label: 'NEXA E-commerce',  client: 'Plataforma de Saúde' },
+  { id: 'f2', cat: 'fullstack', src: '/assets/nexa-cover.webp',  label: 'NEXA E-commerce',  client: 'Plataforma de Saúde' },
 
-  // ── SOCIAL MEDIA — PSICOLOGA ─────────────────────────────────────────
-  { id: 's1', cat: 'social', subclient: 'PSICOLOGA', src: '/assets/psc1.webp', label: 'Post 1' },
-  { id: 's2', cat: 'social', subclient: 'PSICOLOGA', src: '/assets/psc2.webp', label: 'Post 2' },
-  { id: 's3', cat: 'social', subclient: 'PSICOLOGA', src: '/assets/psc3.webp', label: 'Post 3' },
-  { id: 's4', cat: 'social', subclient: 'PSICOLOGA', src: '/assets/psc4.webp', label: 'Post 4' },
-  { id: 's5', cat: 'social', subclient: 'PSICOLOGA', src: '/assets/psc5.webp', label: 'Post 5' },
-  { id: 's6', cat: 'social', subclient: 'PSICOLOGA', src: '/assets/psc6.webp', label: 'Post 6' },
-
-  // ── SOCIAL MEDIA — AGENCIA ──────────────────────────────────
-  { id: 's7', cat: 'social', subclient: 'ZULA', src: '/assets/agencia1.webp', label: 'Post 1' },
-  { id: 's8', cat: 'social', subclient: 'ZULA', src: '/assets/agencia2.webp', label: 'Post 2' },
-  { id: 's9', cat: 'social', subclient: 'ZULA', src: '/assets/agencia3.webp', label: 'Post 3' },
+  // ── SOCIAL MEDIA (agrupado por cliente na tab Social) ────────────
+  { id: 'kdesperta1', cat: 'social', subclient: 'K-Desperta', src: '/assets/social/kdesperta1.webp', label: 'K-Desperta' },
+  { id: 'kdesperta2', cat: 'social', subclient: 'K-Desperta', src: '/assets/social/kdesperta2.webp', label: 'K-Desperta' },
+  { id: 'kdesperta3', cat: 'social', subclient: 'K-Desperta', src: '/assets/social/kdesperta3.webp', label: 'K-Desperta' },
+  { id: 'kdesperta4', cat: 'social', subclient: 'K-Desperta', src: '/assets/social/kdesperta4.webp', label: 'K-Desperta' },
+  { id: 'kdesperta5', cat: 'social', subclient: 'K-Desperta', src: '/assets/social/kdesperta5.webp', label: 'K-Desperta' },
+  { id: 'kdesperta6', cat: 'social', subclient: 'K-Desperta', src: '/assets/social/kdesperta6.webp', label: 'K-Desperta' },
+  { id: 'kdesperta7', cat: 'social', subclient: 'K-Desperta', src: '/assets/social/kdesperta7.webp', label: 'K-Desperta' },
+  { id: 'kdesperta9', cat: 'social', subclient: 'K-Desperta', src: '/assets/social/kdesperta9.webp', label: 'K-Desperta' },
+  { id: 'imobiliaria1', cat: 'social', subclient: 'Imobiliária', src: '/assets/social/imobiliaria1.webp', label: 'Imobiliária' },
+  { id: 'imobiliaria2', cat: 'social', subclient: 'Imobiliária', src: '/assets/social/imobiliaria2.webp', label: 'Imobiliária' },
+  { id: 'imobiliaria3', cat: 'social', subclient: 'Imobiliária', src: '/assets/social/imobiliaria3.webp', label: 'Imobiliária' },
+  { id: 'imobiliaria4', cat: 'social', subclient: 'Imobiliária', src: '/assets/social/imobiliaria4.webp', label: 'Imobiliária' },
+  { id: 'imobiliaria5', cat: 'social', subclient: 'Imobiliária', src: '/assets/social/imobiliaria5.webp', label: 'Imobiliária' },
+  { id: 'imobiliaria6', cat: 'social', subclient: 'Imobiliária', src: '/assets/social/imobiliaria6.webp', label: 'Imobiliária' },
+  { id: 'imobiliaria7', cat: 'social', subclient: 'Imobiliária', src: '/assets/social/imobiliaria7.webp', label: 'Imobiliária' },
+  { id: 'imobiliaria8', cat: 'social', subclient: 'Imobiliária', src: '/assets/social/imobiliaria8.webp', label: 'Imobiliária' },
+  { id: 'imobiliaria9', cat: 'social', subclient: 'Imobiliária', src: '/assets/social/imobiliaria9.webp', label: 'Imobiliária' },
+  { id: 'serena1', cat: 'social', subclient: 'Serena Restauração', src: '/assets/social/serena1.webp', label: 'Serena Restauração' },
+  { id: 'serena2', cat: 'social', subclient: 'Serena Restauração', src: '/assets/social/serena2.webp', label: 'Serena Restauração' },
+  { id: 'legend1', cat: 'social', subclient: 'Legend Segurança', src: '/assets/social/legend-setembro.webp', label: 'Legend Segurança' },
+  { id: 'psc1', cat: 'social', subclient: 'Psicóloga', src: '/assets/psc1.webp', label: 'Psicóloga' },
+  { id: 'psc2', cat: 'social', subclient: 'Psicóloga', src: '/assets/psc2.webp', label: 'Psicóloga' },
+  { id: 'psc3', cat: 'social', subclient: 'Psicóloga', src: '/assets/psc3.webp', label: 'Psicóloga' },
+  { id: 'psc4', cat: 'social', subclient: 'Psicóloga', src: '/assets/psc4.webp', label: 'Psicóloga' },
+  { id: 'psc5', cat: 'social', subclient: 'Psicóloga', src: '/assets/psc5.webp', label: 'Psicóloga' },
+  { id: 'psc6', cat: 'social', subclient: 'Psicóloga', src: '/assets/psc6.webp', label: 'Psicóloga' },
+  { id: 'agencia1', cat: 'social', subclient: 'Zula', src: '/assets/agencia1.webp', label: 'Zula' },
+  { id: 'agencia2', cat: 'social', subclient: 'Zula', src: '/assets/agencia2.webp', label: 'Zula' },
+  { id: 'agencia3', cat: 'social', subclient: 'Zula', src: '/assets/agencia3.webp', label: 'Zula' },
 
   // ── LOGÓTIPOS ───────────────────────────────────────────────────
   { id: 'l1', cat: 'logos', src: '/assets/zula.png',          label: 'Zula' },
-  { id: 'l2', cat: 'logos', src: '/assets/ingles ciezia.png', label: 'Inglês Ciezia' },
-  { id: 'l3', cat: 'logos', src: '/assets/Logo yocula.png',   label: 'Yocula' },
+  { id: 'l2', cat: 'logos', src: '/assets/ingles ciezia.png', label: 'English with Ciezia' },
+  { id: 'l3', cat: 'logos', src: '/assets/Logo yocula.png',   label: 'Yoculula' },
   { id: 'l4', cat: 'logos', src: '/assets/Innerhive.png',     label: 'Innerhive' },
   { id: 'l5', cat: 'logos', src: '/assets/Nexus.png',         label: 'Nexus' },
   { id: 'l6', cat: 'logos', src: '/assets/Brandford.png',     label: 'Brandford' },
@@ -91,7 +106,7 @@ function SocialGrid({ items, onOpen }) {
         const group = items.filter(i => i.subclient === sub)
         return (
           <div key={sub} className="social-group">
-            <p className="social-group__label t-mono">— {sub}</p>
+            <p className="social-group__label t-mono">{sub}</p>
             <div className="pg-grid pg-grid--3">
               {group.map((item, idx) => {
                 const globalIdx = items.indexOf(item)
@@ -172,7 +187,7 @@ export default function AllProjects() {
           <Link to="/" className="ap-back">← voltar</Link>
           <h1 className="ap-title">Portfólio</h1>
           <p className="ap-sub">
-            Design gráfico, desenvolvimento, social media e identidades visuais — tudo num só lugar.
+            Design gráfico, desenvolvimento, social media e identidades visuais, tudo num só lugar.
           </p>
         </div>
 

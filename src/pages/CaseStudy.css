@@ -1,4 +1,4 @@
-/* ══ HERO — full image to divider line ══════════ */
+/* ══ HERO: full image to divider line ══════════ */
 .cs-hero {
   position: relative;
   min-height: 100vh;
@@ -21,10 +21,10 @@
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(6,6,8,0.1) 0%,
-    rgba(6,6,8,0.3) 40%,
-    rgba(6,6,8,0.85) 70%,
-    rgba(6,6,8,0.98) 100%
+    rgba(6,6,8,0.25) 0%,
+    rgba(6,6,8,0.6) 35%,
+    rgba(6,6,8,0.94) 62%,
+    rgba(6,6,8,1) 100%
   );
 }
 
@@ -37,7 +37,7 @@
 
 .cs-back {
   font-family: var(--mono);
-  font-size: 0.72rem;
+  font-size: var(--fs-xs);
   color: rgba(255,255,255,0.35);
   transition: color 0.15s;
   margin-bottom: 2rem;
@@ -48,7 +48,7 @@
 
 .cs-cat {
   font-family: var(--mono);
-  font-size: 0.7rem;
+  font-size: var(--fs-xs);
   color: var(--green);
   margin-bottom: 0.5rem;
   letter-spacing: 0.08em;
@@ -72,7 +72,7 @@
   hyphens: auto;
 }
 
-/* Meta — overlaid at bottom of image, above divider */
+/* Meta: overlaid at bottom of image, above divider */
 .cs-meta {
   position: relative;
   z-index: 1;
@@ -96,14 +96,14 @@
 
 .cs-meta__label {
   font-family: var(--mono);
-  font-size: 0.6rem;
+  font-size: var(--fs-xs);
   color: rgba(255,255,255,0.3);
   text-transform: uppercase;
   letter-spacing: 0.14em;
 }
 
 .cs-meta__value {
-  font-size: 0.92rem;
+  font-size: var(--fs-base);
   color: #fff;
   font-weight: 500;
   text-align: left;
@@ -118,17 +118,28 @@
 }
 
 .cs-meta__link {
-  font-family: var(--mono);
-  font-size: 0.78rem;
-  color: var(--green);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: #000;
+  background: var(--green);
+  padding: 0.6rem 1.1rem;
+  border-radius: 7px;
   transition: opacity 0.15s;
   text-decoration: none;
 }
-.cs-meta__link:hover { opacity: 0.7; }
+.cs-meta__link:hover { opacity: 0.85; }
+
+/* linhas de texto confortáveis mesmo com o container largo */
+.cs-block__text, .cs-steps { max-width: 68ch; }
 
 /* ══ BODY ═══════════════════════════════════════ */
-.cs-body {
-  padding: 4rem 0;
+/* .cs .cs-body ganha ao padding do .container (globals.css carrega depois) */
+.cs .cs-body {
+  padding-top: 4rem;
+  padding-bottom: 5rem;
   display: flex;
   flex-direction: column;
   gap: 3.5rem;
@@ -136,7 +147,7 @@
 
 .cs-block__label {
   font-family: var(--mono);
-  font-size: 0.65rem;
+  font-size: var(--fs-xs);
   color: var(--text-3);
   text-transform: uppercase;
   letter-spacing: 0.14em;
@@ -145,11 +156,11 @@
 }
 
 .cs-block__text {
-  font-size: 0.97rem;
+  font-size: var(--fs-base);
   color: var(--text-2);
   line-height: 1.85;
   max-width: 60ch;
-  text-align: justify;
+  text-align: left;
   hyphens: auto;
 }
 
@@ -163,14 +174,14 @@
 
 .cs-step__num {
   font-family: var(--mono);
-  font-size: 0.65rem;
+  font-size: var(--fs-xs);
   color: var(--green);
   min-width: 1.5rem;
   padding-top: 0.15rem;
 }
 
 .cs-step__title {
-  font-size: 0.92rem;
+  font-size: var(--fs-base);
   font-weight: 500;
   color: var(--text);
   margin-bottom: 0.3rem;
@@ -178,10 +189,10 @@
 }
 
 .cs-step__desc {
-  font-size: 0.85rem;
+  font-size: var(--fs-sm);
   color: var(--text-2);
   line-height: 1.75;
-  text-align: justify;
+  text-align: left;
   hyphens: auto;
 }
 
@@ -234,7 +245,7 @@
 
 .cs-result span {
   font-family: var(--mono);
-  font-size: 0.65rem;
+  font-size: var(--fs-xs);
   color: var(--text-3);
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -261,12 +272,12 @@
 
 .cs-nav__dir {
   font-family: var(--mono);
-  font-size: 0.68rem;
+  font-size: var(--fs-xs);
   color: var(--text-3);
 }
 
 .cs-nav__title {
-  font-size: 0.95rem;
+  font-size: var(--fs-base);
   font-weight: 500;
   color: var(--text);
   text-align: inherit;

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { projects, experiences, stack, socials } from '../data'
+import { publishedProjects, experiences, stack, socials } from '../data'
 import './Home.css'
 
 function useReveal() {
@@ -36,6 +36,13 @@ function Hero() {
         </p>
 
         <div className="hero__row fade-up" style={{ animationDelay: '0.14s' }}>
+          <a href="#projects" className="hero__cta">ver projectos ↓</a>
+          <a href="/silvano-langa-cv-v26.pdf" download className="hero__cv-link">
+            <i className="fas fa-download" /> cv
+          </a>
+        </div>
+
+        <div className="hero__row fade-up" style={{ animationDelay: '0.2s', marginTop: '1.25rem' }}>
           <div className="hero__social">
             {socials.map(s => (
               <a key={s.label} href={s.href} target="_blank" rel="noopener" className="hero__social-icon" aria-label={s.label}>
@@ -43,9 +50,6 @@ function Hero() {
               </a>
             ))}
           </div>
-          <a href="/silvano-langa-cv-v26.pdf" download className="hero__cv-link">
-            <i className="fas fa-download" /> cv
-          </a>
         </div>
 
       </div>
@@ -71,7 +75,7 @@ function Projects() {
           <p className="sec-label" style={{marginBottom:0}}>projectos seleccionados</p>
         </div>
         <div className="projects__cards">
-          {projects.slice(0, 3).map((p, i) => (
+          {publishedProjects.slice(0, 3).map((p, i) => (
             <Link
               key={p.id}
               to={`/project/${p.id}`}
@@ -88,14 +92,6 @@ function Projects() {
                   <span className="pcard__year t-mono">{p.year}</span>
                 </div>
                 <p className="pcard__tagline">{p.tagline}</p>
-                <div className="pcard__tools">
-                  {p.tools.slice(0, 3).map(t => (
-                    <span key={t} className="tag">{t}</span>
-                  ))}
-                  {p.tools.length > 3 && (
-                    <span className="tag">+{p.tools.length - 3}</span>
-                  )}
-                </div>
                 <span className="pcard__cta">ver case study →</span>
               </div>
             </Link>
@@ -103,7 +99,7 @@ function Projects() {
         </div>
         <div className="projects__more reveal">
           <Link to="/projects" className="btn">
-            ver todos os projectos ({projects.length}) →
+            ver portfólio completo →
           </Link>
         </div>
       </div>
@@ -126,7 +122,7 @@ function About() {
                   Olá, sou o Silvano. Não sou apenas developer nem apenas designer, sou a pessoa que transforma o teu problema na solução que precisas.
                 </p>
                 <p className="about__text">
-                  Sou curioso por natureza e teimoso no bom sentido. Quando aceito um desafio, não existe meio-termo: ou encontro a solução, ou aprendo até a encontrar. Acordo todos os dias com uma ideia simples — ser 1% melhor do que ontem. No código, no design, na comunicação, na forma como penso.
+                  Sou curioso por natureza e teimoso no bom sentido. Quando aceito um desafio, não existe meio-termo: ou encontro a solução, ou aprendo até a encontrar. Acordo todos os dias com uma ideia simples: ser 1% melhor do que ontem. No código, no design, na comunicação, na forma como penso.
                 </p>
                 <p className="about__text">
                   Quando trabalhas comigo, não estás a contratar um executante. Estás a trazer alguém que pensa contigo, questiona contigo e não para enquanto o resultado não for exactamente o que precisas.
@@ -253,7 +249,7 @@ function Contact() {
                 : <>enviar mensagem</>}
             </button>
             {status === 'ok'  && <p className="contact__feedback contact__feedback--ok"><i className="fas fa-check" /> Mensagem enviada!</p>}
-            {status === 'err' && <p className="contact__feedback contact__feedback--err"><i className="fas fa-times" /> Erro — tenta via WhatsApp.</p>}
+            {status === 'err' && <p className="contact__feedback contact__feedback--err"><i className="fas fa-times" /> Erro ao enviar. Tenta via WhatsApp.</p>}
           </form>
 
           <div className="contact__links">
