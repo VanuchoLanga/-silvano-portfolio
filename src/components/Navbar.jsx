@@ -46,7 +46,7 @@ export default function Navbar() {
           <a href="#about"      onClick={e => handleLink(e, 'about')}>sobre</a>
           <a href="#experience" onClick={e => handleLink(e, 'experience')}>experiência</a>
           <a href="#contact"    onClick={e => handleLink(e, 'contact')}>contacto</a>
-          <a href="/silvano-langa-cv-v26.pdf" download className="nav__cv">
+          <a href="/silvano-langa-cv.pdf" download className="nav__cv">
             cv <i className="fas fa-download" />
           </a>
         </div>

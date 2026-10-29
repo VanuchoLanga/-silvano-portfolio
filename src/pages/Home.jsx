@@ -32,12 +32,12 @@ function Hero() {
         </h1>
 
         <p className="hero__tagline fade-up" style={{ animationDelay: '0.08s' }}>
-          Full Stack Dev&nbsp;&nbsp;·&nbsp;&nbsp;Social Media&nbsp;&nbsp;·&nbsp;&nbsp;UX/UI
+          Full Stack Developer&nbsp;&nbsp;·&nbsp;&nbsp;Social Media
         </p>
 
         <div className="hero__row fade-up" style={{ animationDelay: '0.14s' }}>
           <a href="#projects" className="hero__cta">ver projectos ↓</a>
-          <a href="/silvano-langa-cv-v26.pdf" download className="hero__cv-link">
+          <a href="/silvano-langa-cv.pdf" download className="hero__cv-link">
             <i className="fas fa-download" /> cv
           </a>
         </div>
@@ -119,13 +119,13 @@ function About() {
           <div className="about__text-col">
             <div className="about__body reveal">
                 <p className="about__text">
-                  Olá, sou o Silvano. Não sou apenas developer nem apenas designer, sou a pessoa que transforma o teu problema na solução que precisas.
+                  Tenho 24 anos. Cresci em Maputo e vivi três anos em Manjacaze. Sair da capital ensinou-me a adaptar-me a pessoas e ritmos diferentes, e é isso que levo para cada projecto.
                 </p>
                 <p className="about__text">
-                  Sou curioso por natureza e teimoso no bom sentido. Quando aceito um desafio, não existe meio-termo: ou encontro a solução, ou aprendo até a encontrar. Acordo todos os dias com uma ideia simples: ser 1% melhor do que ontem. No código, no design, na comunicação, na forma como penso.
+                  Escrevo código, desenho e comunico. Sou curioso e um pouco teimoso: quando não sei algo, estudo até entender, e não largo um problema antes de o resolver.
                 </p>
                 <p className="about__text">
-                  Quando trabalhas comigo, não estás a contratar um executante. Estás a trazer alguém que pensa contigo, questiona contigo e não para enquanto o resultado não for exactamente o que precisas.
+                  Fora do ecrã, ouço podcasts, leio sobre mindset, faço parte de uma comunidade nerd e sou cristão. Gosto de receber críticas, a sério e não por protocolo: é assim que melhoro.
                 </p>
             </div>
 
@@ -253,7 +253,7 @@ function Contact() {
           </form>
 
           <div className="contact__links">
-            {['WhatsApp', 'LinkedIn', 'Instagram', 'Behance'].map(l => socials.find(s => s.label === l)).map(c => (
+            {['WhatsApp', 'Telefone', 'Email', 'LinkedIn', 'Instagram'].map(l => socials.find(s => s.label === l)).map(c => (
               <a key={c.label} href={c.href} target="_blank" rel="noopener" className="contact__link">
                 <i className={c.icon} />
                 <div>

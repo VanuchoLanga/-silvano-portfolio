@@ -95,13 +95,13 @@ export const projects = [
     title: 'K-Desperta Social Strategy',
     year: '2025',
     category: 'Social Media',
-    tagline: 'Estratégia que triplicou o engagement em 90 dias.',
+    tagline: '+312% de seguidores em 90 dias com conteúdo orgânico.',
     cover: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=1200&h=700&fit=crop',
     hero:  'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=1920&h=1080&fit=crop',
-    client: 'EPTC', role: 'Social Media Manager', duration: '90 dias',
-    tools: ['Premiere','Photoshop','Canva Pro','Meta Ads'],
+    client: 'KDesperta', role: 'Social Media Manager & Designer', duration: '90 dias',
+    tools: ['Premiere','Photoshop','Figma','Meta Business Suite'],
     liveUrl: '#',
-    overview: 'Desenvolvimento e implementação de estratégia de conteúdo completa para a EPTC, incluindo produção visual e gestão de comunidade.',
+    overview: 'Desenvolvimento e implementação de estratégia de conteúdo completa para a KDesperta, academia de exames de admissão, incluindo produção visual e gestão de comunidade.',
     problem: 'Presença nas redes sem estratégia, conteúdo inconsistente e zero engajamento da comunidade estudantil.',
     process: [
       { step:'01', title:'Auditoria', desc:'Análise de 6 meses de histórico e benchmark com concorrentes.' },
@@ -110,10 +110,8 @@ export const projects = [
       { step:'04', title:'Optimização', desc:'Monitorização de métricas e A/B testing de formatos.' },
     ],
     results: [
-      { metric:'+312%', label:'Seguidores' },
-      { metric:'+480%', label:'Engagement' },
-      { metric:'2.1M', label:'Alcance orgânico' },
-      { metric:'+67%', label:'Inscrições via social' },
+      { metric:'+312%', label:'Seguidores em 90 dias' },
+      { metric:'2.1M', label:'Impressões orgânicas' },
     ],
     images: [
       'https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?w=1200&h=700&fit=crop',
@@ -188,18 +186,22 @@ export const publishedProjects = projects.filter(p => !p.draft)
 
 export const socials = [
   { href:'https://github.com/VanuchoLanga',                                 icon:'fab fa-github',      label:'GitHub',    sub:'VanuchoLanga' },
-  { href:'https://www.linkedin.com/in/silvano-de-joaquim-langa-7354803b7', icon:'fab fa-linkedin-in', label:'LinkedIn',  sub:'Silvano Langa' },
-  { href:'https://www.instagram.com/silvanoolangaa/',                       icon:'fab fa-instagram',   label:'Instagram', sub:'@silvanoolangaa' },
-  { href:'https://wa.me/258833529644',                                      icon:'fab fa-whatsapp',    label:'WhatsApp',  sub:'Resposta rápida' },
+  { href:'https://www.linkedin.com/in/silvano-langa', icon:'fab fa-linkedin-in', label:'LinkedIn',  sub:'Silvano Langa' },
+  { href:'https://www.instagram.com/silvano.jlanga/',                        icon:'fab fa-instagram',   label:'Instagram', sub:'@silvano.jlanga' },
+  { href:'mailto:silvanodejoaquimlanga@gmail.com',                        icon:'fas fa-envelope',    label:'Email',     sub:'silvanodejoaquimlanga@gmail.com' },
+  { href:'tel:+258880357221',                                        icon:'fas fa-phone',       label:'Telefone',  sub:'+258 88 035 7221' },
+  { href:'https://wa.me/258833529644',                                      icon:'fab fa-whatsapp',    label:'WhatsApp',  sub:'+258 83 352 9644' },
   { href:'https://www.behance.net/silvanolanga',                            icon:'fab fa-behance',     label:'Behance',   sub:'Ver trabalho' },
   { href:'https://www.pinterest.com/SilvanooLangaa/',                       icon:'fab fa-pinterest',   label:'Pinterest', sub:'SilvanooLangaa' },
 ]
 
 export const experiences = [
-  { company:'K-Desperta', role:'Social Media & Designer', period:'2025 - Presente', type:'Full-Time', desc:'Gestão de redes sociais, materiais publicitários, identidade visual e peças de comunicação.', skills:['Meta Business Suite','Figma','ClickUp'] },
-  { company:'Freelance', role:'Designer Gráfico & Web Developer', period:'2019 - Presente', type:'Freelancer', desc:'Desenvolvimento web, sistemas de design e identidade visual para empresas moçambicanas, portuguesas e brasileiras.', skills:['React','Photoshop','Illustrator','InDesign','Java'] },
-  { company:'EPTC, Escola Profissional', role:'Formador (estagiário) de Design e Marketing', period:'2025', type:'Docência', desc:'Ministração de módulos de design gráfico e marketing digital para o ensino técnico-profissional.', skills:['Design Gráfico','Marketing Digital'] },
-  { company:'Rádio Comunitária de Manjacaze', role:'IT, Formador', period:'2022', type:'Docência', desc:'Ministração de módulos do pacote Microsoft Office (Word, Excel, PowerPoint).', skills:['IT Geral'] },
+  { company:'Brandford Studio · Moçambique & Brasil', role:'Co-fundador', period:'2026 - Presente', type:'Agência', desc:'Agência de marketing digital: estratégia, conteúdo e presença digital para clientes nos dois países.', skills:['Estratégia','Conteúdo','Social Media'] },
+  { company:'Legend Segurança, Lda', role:'Desenvolvedor Web & Director de Comunicação', period:'2025 - Presente', type:'Full-Time', desc:'Construção do site institucional, domínio e e-mail corporativo. Gestão e direcção da comunicação social e das redes da empresa.', skills:['React','Node.js','Comunicação'] },
+  { company:'KDesperta · Academia de exames de admissão', role:'Social Media Manager & Designer', period:'2025 - Presente', type:'Full-Time', desc:'+312% de seguidores em 90 dias com conteúdo orgânico. 2.1M impressões orgânicas; reels, motion e calendário editorial.', skills:['Meta Business Suite','Figma','Photoshop'] },
+  { company:'Bright Mind Institute', role:'Designer & Social Media · Formador', period:'2026 - Presente', type:'Docência', desc:'Design de peças e gestão das redes sociais do instituto. Formador de desenvolvimento de software.', skills:['Design Gráfico','Social Media','Desenvolvimento'] },
+  { company:'EPTC · Escola Profissional', role:'Formador Assistente · Design e Marketing', period:'2025', type:'Docência', desc:'Apoio nos módulos de design gráfico e marketing digital, materiais e avaliações práticas.', skills:['Design Gráfico','Marketing Digital'] },
+  { company:'Criativismo Publicidade', role:'Designer Gráfico', period:'2020 - Presente', type:'Freelancer', desc:'Identidades visuais, campanhas e peças de comunicação para vários clientes.', skills:['Illustrator','Photoshop','InDesign'] },
 ]
 
 export const stack = [
@@ -213,6 +215,8 @@ export const stack = [
   { icon:'devicon-tailwindcss-original colored', label:'Tailwind' },
   { icon:'devicon-git-plain colored',            label:'Git' },
   { icon:'devicon-github-original colored',      label:'GitHub' },
+  { icon:'devicon-vscode-plain colored',         label:'VS Code' },
+  { icon:'devicon-androidstudio-plain colored',  label:'Android Studio' },
   { icon:'devicon-figma-plain colored',          label:'Figma' },
   { icon:'devicon-photoshop-plain colored',      label:'Photoshop' },
   { icon:'devicon-illustrator-plain colored',    label:'Illustrator' },
