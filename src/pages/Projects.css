@@ -227,6 +227,18 @@
   text-align: center;
 }
 
+.lightbox__links {
+  display: flex;
+  gap: 1.25rem;
+  font-size: var(--fs-xs);
+}
+.lightbox__links a {
+  color: var(--text);
+  border-bottom: 1px solid var(--green);
+  padding-bottom: 2px;
+}
+.lightbox__links a:hover { color: var(--green) }
+
 .lightbox__counter {
   font-size: var(--fs-xs);
   color: var(--text-3);

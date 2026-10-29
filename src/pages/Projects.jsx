@@ -14,8 +14,12 @@ const CATEGORIES = [
 
 const ITEMS = [
   // ── FULL STACK ──────────────────────────────────────────────────
-  { id: 'f1', cat: 'fullstack', src: '/assets/legend-card.webp', label: 'Legend Segurança', client: 'Website Institucional' },
-  { id: 'f2', cat: 'fullstack', src: '/assets/nexa-cover.webp',  label: 'NEXA E-commerce',  client: 'Plataforma de Saúde' },
+  { id: 'f1', cat: 'fullstack', src: '/assets/legend-card.webp', label: 'Legend Segurança', client: 'Website Institucional', live: 'https://www.legendsegurancalda.co.mz/' },
+  { id: 'f2', cat: 'fullstack', src: '/assets/nexa-cover.webp',  label: 'NEXA E-commerce',  client: 'Plataforma de Saúde', live: 'https://www.nexastore.store/' },
+  { id: 'f3', cat: 'fullstack', src: '/assets/electrolink-card.webp', full: '/assets/electrolink-cover.webp', label: 'ElectroLink', client: 'Site institucional + painel admin', live: 'https://electro-link-site.vercel.app', repo: 'https://github.com/VanuchoLanga/Electro-link-site' },
+  { id: 'f4', cat: 'fullstack', src: '/assets/pontoaponto-card.webp', full: '/assets/pontoaponto-cover.webp', label: 'Ponto a Ponto Logística', client: 'Plataforma de gestão de importações', live: 'https://ponto-a-ponto-two.vercel.app', repo: 'https://github.com/VanuchoLanga/Ponto-a-ponto' },
+  { id: 'f5', cat: 'fullstack', src: '/assets/mamaafrica-card.webp', full: '/assets/mamaafrica-cover.webp', label: 'Mamã África', client: 'E-commerce de cosmética · UX/UI', live: 'https://e-commerce-uxui.vercel.app', repo: 'https://github.com/VanuchoLanga/E-commerceUXUI' },
+  { id: 'f6', cat: 'fullstack', src: '/assets/briefing-card.webp', full: '/assets/briefing-cover.webp', label: 'Briefing Criativo', client: 'Formulário de identidade visual', live: 'https://briefing-agencia.vercel.app', repo: 'https://github.com/VanuchoLanga/Briefing-Agencia' },
 
   // ── SOCIAL MEDIA (agrupado por cliente na tab Social) ────────────
   { id: 'kdesperta1', cat: 'social', subclient: 'K-Desperta', src: '/assets/social/kdesperta1.webp', label: 'K-Desperta' },
@@ -83,11 +87,17 @@ function Lightbox({ items, index, onClose, onPrev, onNext }) {
       <button className="lightbox__close" onClick={onClose} aria-label="fechar">✕</button>
       <button className="lightbox__prev" aria-label="anterior" onClick={e => { e.stopPropagation(); onPrev() }}>‹</button>
       <div className="lightbox__content" onClick={e => e.stopPropagation()}>
-        <img src={item.src} alt={item.label} className="lightbox__img" />
+        <img src={item.full || item.src} alt={item.label} className="lightbox__img" />
         <div className="lightbox__info">
           <p className="lightbox__label">{item.label}</p>
           {item.client && <p className="lightbox__client t-mono">{item.client}</p>}
           {item.subclient && <p className="lightbox__client t-mono">{item.subclient}</p>}
+          {(item.live || item.repo) && (
+            <p className="lightbox__links t-mono">
+              {item.live && <a href={item.live} target="_blank" rel="noopener">ver site ↗</a>}
+              {item.repo && <a href={item.repo} target="_blank" rel="noopener">código ↗</a>}
+            </p>
+          )}
           <p className="lightbox__counter t-mono">{index + 1} / {items.length}</p>
         </div>
       </div>
