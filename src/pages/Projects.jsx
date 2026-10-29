@@ -14,44 +14,36 @@ const CATEGORIES = [
 
 const ITEMS = [
   // ── DESIGN GRÁFICO ──────────────────────────────────────────────
-  { id: 'd1', cat: 'design', src: '/assets/design/arte1.jpg',  label: 'Flyer Evento',       client: 'Criativismo' },
-  { id: 'd2', cat: 'design', src: '/assets/design/arte2.jpg',  label: 'Campanha Impressa',  client: 'Criativismo' },
-  { id: 'd3', cat: 'design', src: '/assets/design/arte3.jpg',  label: 'Brochura',           client: 'EPTC' },
-  { id: 'd4', cat: 'design', src: '/assets/design/arte4.jpg',  label: 'Cartaz',             client: 'Legend Segurança' },
-  { id: 'd5', cat: 'design', src: '/assets/design/arte5.jpg',  label: 'Banner Digital',     client: 'Criativismo' },
-  { id: 'd6', cat: 'design', src: '/assets/design/arte6.jpg',  label: 'Material POS',       client: 'Criativismo' },
+  // (vazio — adiciona aqui as artes quando estiverem em /assets/)
 
   // ── FULL STACK ──────────────────────────────────────────────────
-  { id: 'f1', cat: 'fullstack', src: '/assets/ledend card.png',   label: 'Legend Segurança',      client: 'Website Institucional' },
-  { id: 'f2', cat: 'fullstack', src: '/assets/fullstack/bazara.jpg',   label: 'Bazara E-Commerce',     client: 'Plataforma de Vendas' },
-  { id: 'f3', cat: 'fullstack', src: '/assets/fullstack/nexa.jpg',     label: 'NEXA Health',           client: 'Plataforma de Saúde' },
-  { id: 'f4', cat: 'fullstack', src: '/assets/fullstack/sigecap.jpg',  label: 'SiGeCat',               client: 'App Desktop' },
+  { id: 'f1', cat: 'fullstack', src: '/assets/legend-card.webp', label: 'Legend Segurança', client: 'Website Institucional' },
+  { id: 'f2', cat: 'fullstack', src: '/assets/nexa-cover.webp',   label: 'NEXA E-commerce',  client: 'Plataforma de Saúde' },
 
   // ── SOCIAL MEDIA — PSICOLOGA ─────────────────────────────────────────
-  { id: 's1', cat: 'social', subclient: 'PSICOLOGA', src: '/assets/psc1.png'},
-  { id: 's2', cat: 'social', subclient: 'PSICOLOGA', src: '/assets/psc2.png'},
-  { id: 's3', cat: 'social', subclient: 'PSICOLOGA', src: '/assets/psc3.png'},
-  { id: 's4', cat: 'social', subclient: 'PSICOLOGA', src: '/assets/psc4.png'},
-  { id: 's5', cat: 'social', subclient: 'PSICOLOGA', src: '/assets/psc5.png'},
-  { id: 's6', cat: 'social', subclient: 'PSICOLOGA', src: '/assets/psc6.png'},
+  { id: 's1', cat: 'social', subclient: 'PSICOLOGA', src: '/assets/psc1.webp', label: 'Post 1' },
+  { id: 's2', cat: 'social', subclient: 'PSICOLOGA', src: '/assets/psc2.webp', label: 'Post 2' },
+  { id: 's3', cat: 'social', subclient: 'PSICOLOGA', src: '/assets/psc3.webp', label: 'Post 3' },
+  { id: 's4', cat: 'social', subclient: 'PSICOLOGA', src: '/assets/psc4.webp', label: 'Post 4' },
+  { id: 's5', cat: 'social', subclient: 'PSICOLOGA', src: '/assets/psc5.webp', label: 'Post 5' },
+  { id: 's6', cat: 'social', subclient: 'PSICOLOGA', src: '/assets/psc6.webp', label: 'Post 6' },
 
   // ── SOCIAL MEDIA — AGENCIA ──────────────────────────────────
-  { id: 's7', cat: 'social', subclient: 'ZULA', src: '/assets/Agencia1.png'},
-  { id: 's8', cat: 'social', subclient: 'ZULA', src: '/assets/Agencia2.png'},
-  { id: 's9', cat: 'social', subclient: 'ZULA', src: '/assets/Agencia3.png'},
-
-  // ── SOCIAL MEDIA — OUTRAS ───────────────────────────────────────
-  { id: 's10', cat: 'social', subclient: 'Outros',      src: '/assets/social/outros/post1.jpg',     label: 'Arte Única' },
-  { id: 's11', cat: 'social', subclient: 'Outros',      src: '/assets/social/outros/post2.jpg',     label: 'Arte Única' },
+  { id: 's7', cat: 'social', subclient: 'ZULA', src: '/assets/agencia1.webp', label: 'Post 1' },
+  { id: 's8', cat: 'social', subclient: 'ZULA', src: '/assets/agencia2.webp', label: 'Post 2' },
+  { id: 's9', cat: 'social', subclient: 'ZULA', src: '/assets/agencia3.webp', label: 'Post 3' },
 
   // ── LOGÓTIPOS ───────────────────────────────────────────────────
-  { id: 'l1', cat: 'logos', src: '/assets/zula.png'},
-  { id: 'l2', cat: 'logos', src: '/assets/ingles ciezia.png'},
-  { id: 'l3', cat: 'logos', src: '/assets/Logo yocula.png'},
-  { id: 'l4', cat: 'logos', src: '/assets/Innerhive.png'},
-  { id: 'l5', cat: 'logos', src: '/assets/Nexus.png'},
-  { id: 'l6', cat: 'logos', src: '/assets/Brandford.png'},
+  { id: 'l1', cat: 'logos', src: '/assets/zula.png',          label: 'Zula' },
+  { id: 'l2', cat: 'logos', src: '/assets/ingles ciezia.png', label: 'Inglês Ciezia' },
+  { id: 'l3', cat: 'logos', src: '/assets/Logo yocula.png',   label: 'Yocula' },
+  { id: 'l4', cat: 'logos', src: '/assets/Innerhive.png',     label: 'Innerhive' },
+  { id: 'l5', cat: 'logos', src: '/assets/Nexus.png',         label: 'Nexus' },
+  { id: 'l6', cat: 'logos', src: '/assets/Brandford.png',     label: 'Brandford' },
 ]
+
+// só mostra tabs que têm conteúdo
+const VISIBLE_CATEGORIES = CATEGORIES.filter(c => c.id === 'all' || ITEMS.some(i => i.cat === c.id))
 
 // ── LIGHTBOX ─────────────────────────────────────────────────────────────────
 function Lightbox({ items, index, onClose, onPrev, onNext }) {
@@ -73,8 +65,8 @@ function Lightbox({ items, index, onClose, onPrev, onNext }) {
 
   return (
     <div className="lightbox" onClick={onClose}>
-      <button className="lightbox__close" onClick={onClose}>✕</button>
-      <button className="lightbox__prev" onClick={e => { e.stopPropagation(); onPrev() }}>‹</button>
+      <button className="lightbox__close" onClick={onClose} aria-label="fechar">✕</button>
+      <button className="lightbox__prev" aria-label="anterior" onClick={e => { e.stopPropagation(); onPrev() }}>‹</button>
       <div className="lightbox__content" onClick={e => e.stopPropagation()}>
         <img src={item.src} alt={item.label} className="lightbox__img" />
         <div className="lightbox__info">
@@ -84,7 +76,7 @@ function Lightbox({ items, index, onClose, onPrev, onNext }) {
           <p className="lightbox__counter t-mono">{index + 1} / {items.length}</p>
         </div>
       </div>
-      <button className="lightbox__next" onClick={e => { e.stopPropagation(); onNext() }}>›</button>
+      <button className="lightbox__next" aria-label="seguinte" onClick={e => { e.stopPropagation(); onNext() }}>›</button>
     </div>
   )
 }
@@ -104,8 +96,9 @@ function SocialGrid({ items, onOpen }) {
               {group.map((item, idx) => {
                 const globalIdx = items.indexOf(item)
                 return (
-                  <div
+                  <button
                     key={item.id}
+                    type="button"
                     className="pg-item"
                     onClick={() => onOpen(globalIdx)}
                   >
@@ -113,7 +106,7 @@ function SocialGrid({ items, onOpen }) {
                     <div className="pg-item__overlay">
                       <span>{item.label}</span>
                     </div>
-                  </div>
+                  </button>
                 )
               })}
             </div>
@@ -154,8 +147,9 @@ export default function AllProjects() {
   const renderGrid = (items, cols = 3) => (
     <div className={`pg-grid pg-grid--${cols}`}>
       {items.map((item, idx) => (
-        <div
+        <button
           key={item.id}
+          type="button"
           className="pg-item"
           onClick={() => openLightbox(items, idx)}
         >
@@ -164,7 +158,7 @@ export default function AllProjects() {
             <span>{item.label}</span>
             {item.client && <span className="pg-item__client">{item.client}</span>}
           </div>
-        </div>
+        </button>
       ))}
     </div>
   )
@@ -184,7 +178,7 @@ export default function AllProjects() {
 
         {/* TABS */}
         <div className="ap-tabs">
-          {CATEGORIES.map(c => (
+          {VISIBLE_CATEGORIES.map(c => (
             <button
               key={c.id}
               className={`ap-tab ${active === c.id ? 'active' : ''}`}

@@ -1,11 +1,21 @@
 import { useState, useEffect } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import './Navbar.css'
+
+function scrollToId(id) {
+  const el = document.getElementById(id)
+  if (el) {
+    const offset = 70
+    const top = el.getBoundingClientRect().top + window.scrollY - offset
+    window.scrollTo({ top, behavior: 'smooth' })
+  }
+}
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
   const location = useLocation()
+  const navigate = useNavigate()
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 20)
@@ -13,17 +23,18 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', fn)
   }, [])
 
-  useEffect(() => { setOpen(false); window.scrollTo(0, 0) }, [location])
+  // vindo de outra página com /#secção → espera o render da Home e faz scroll
+  useEffect(() => {
+    setOpen(false)
+    if (location.hash) requestAnimationFrame(() => scrollToId(location.hash.slice(1)))
+    else window.scrollTo(0, 0)
+  }, [location])
 
   const handleLink = (e, id) => {
     e.preventDefault()
     setOpen(false)
-    const el = document.getElementById(id)
-    if (el) {
-      const offset = 70
-      const top = el.getBoundingClientRect().top + window.scrollY - offset
-      window.scrollTo({ top, behavior: 'smooth' })
-    }
+    if (location.pathname === '/') scrollToId(id)
+    else navigate('/#' + id)
   }
 
   return (

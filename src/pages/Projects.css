@@ -96,11 +96,20 @@
 
 .pg-item {
   position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
   overflow: hidden;
   cursor: pointer;
   background: var(--bg-2);
   aspect-ratio: 1 / 1;
 }
+
+.pg-item:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
 
 .pg-grid--2 .pg-item { aspect-ratio: 16 / 10; }
 .pg-grid--4 .pg-item { aspect-ratio: 1 / 1; }

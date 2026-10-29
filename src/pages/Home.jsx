@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { projects, experiences, stack } from '../data'
+import { projects, experiences, stack, socials } from '../data'
 import './Home.css'
 
 function useReveal() {
@@ -37,15 +37,8 @@ function Hero() {
 
         <div className="hero__row fade-up" style={{ animationDelay: '0.14s' }}>
           <div className="hero__social">
-            {[
-              { href:'https://github.com/VanuchoLanga',                                icon:'fab fa-github' },
-              { href:'https://www.linkedin.com/in/silvano-de-joaquim-langa-7354803b7', icon:'fab fa-linkedin-in' },
-              { href:'https://www.instagram.com/silvanoolangaa/',                       icon:'fab fa-instagram' },
-              { href:'https://wa.me/message/UJZ7LIIHHUXPI1',                           icon:'fab fa-whatsapp' },
-              { href:'https://www.behance.net/silvanolanga',                            icon:'fab fa-behance' },
-              { href:'https://www.pinterest.com/SilvanooLangaa/',                            icon:'fab fa-piterest' },
-            ].map(s => (
-              <a key={s.icon} href={s.href} target="_blank" rel="noopener" className="hero__social-icon">
+            {socials.map(s => (
+              <a key={s.label} href={s.href} target="_blank" rel="noopener" className="hero__social-icon" aria-label={s.label}>
                 <i className={s.icon} />
               </a>
             ))}
@@ -153,31 +146,14 @@ function About() {
             </div>
 
             <div className="about__actions reveal" style={{ transitionDelay: '0.15s' }}>
-              <a href="/silvano-langa-cv-v26.pdf" download className="btn btn-solid">
-                <i className="fas fa-download" /> Download CV
-              </a>
-              <a href="#contact" className="btn">Falar comigo</a>
-            </div>
-
-            <div className="about__socials reveal" style={{ transitionDelay: '0.2s' }}>
-              {[
-                { href: 'https://github.com/VanuchoLanga',                                                icon: 'fab fa-github' },
-                { href: 'https://www.instagram.com/silvanoolangaa/',                         icon: 'fab fa-instagram' },
-                { href: 'https://www.linkedin.com/in/silvano-de-joaquim-langa-12928b396/', icon: 'fab fa-linkedin-in' },
-                { href: 'https://www.behance.net/silvanolanga',                                               icon: 'fab fa-behance' },
-                { href: 'https://wa.me/message/+258833529644',                             icon: 'fab fa-whatsapp' },
-              ].map(s => (
-                <a key={s.icon} href={s.href} target="_blank" rel="noopener" className="about__social-link">
-                  <i className={s.icon} />
-                </a>
-              ))}
+              <a href="#contact" className="btn btn-solid">Falar comigo</a>
             </div>
           </div>
 
           {/* PHOTO SIDE */}
           <div className="about__photo reveal" style={{ transitionDelay: '0.05s' }}>
             <img
-              src="/assets/sobresilvano.png"
+              src="/assets/sobre-silvano.webp"
               alt="Silvano Langa"
             />
           </div>
@@ -194,9 +170,6 @@ function Experience() {
       <div className="container">
         <div className="exp__section-header reveal">
           <p className="sec-label" style={{marginBottom:0}}>experiência</p>
-          <a href="/silvano-langa-cv-v26.pdf" download className="btn">
-            <i className="fas fa-download" /> Download CV
-          </a>
         </div>
         <div className="exp__cards">
           {experiences.map((e, i) => (
@@ -284,12 +257,7 @@ function Contact() {
           </form>
 
           <div className="contact__links">
-            {[
-              { href: 'https://wa.me/message/+258833529644',                               icon: 'fab fa-whatsapp',    label: 'WhatsApp',  sub: 'Resposta rápida' },
-              { href: 'www.linkedin.com/in/silvano-de-joaquim-langa-7354803b7',    icon: 'fab fa-linkedin-in', label: 'LinkedIn',   sub: 'Silvano Langa' },
-              { href: 'https://www.instagram.com/silvanoolangaa/',                           icon: 'fab fa-instagram',  label: 'Instagram',  sub: '@silvano.jlanga' },
-              { href: 'https://www.behance.net/silvanolanga',                                                 icon: 'fab fa-behance',    label: 'Behance',    sub: 'Ver trabalho' },
-            ].map(c => (
+            {['WhatsApp', 'LinkedIn', 'Instagram', 'Behance'].map(l => socials.find(s => s.label === l)).map(c => (
               <a key={c.label} href={c.href} target="_blank" rel="noopener" className="contact__link">
                 <i className={c.icon} />
                 <div>
@@ -313,11 +281,11 @@ export default function Home() {
     <>
       <Hero />
       <div className="divider" />
+      <Projects />
+      <div className="divider" />
       <About />
       <div className="divider" />
       <Experience />
-      <div className="divider" />
-      <Projects />
       <div className="divider" />
       <Contact />
     </>
