@@ -196,6 +196,8 @@ export const socials = [
 ]
 
 export const experiences = [
+  { company:'FEI YING', role:'Engenheiro Informático & Chefe de Fábrica', period:'2026 - Presente', type:'Full-Time', desc:'Chefia da fábrica e gestão da equipa de trabalhadores: horários e horas de trabalho. Responsável pelos sistemas informáticos da fábrica.', skills:['Gestão de Equipas','Liderança','Sistemas Informáticos'] },
+  { company:'EcoFinanças', role:'Engenheiro de Software', period:'2026 - Presente', type:'Full-Time', desc:'Requisitos, proposta técnica e desenvolvimento do sistema de gestão financeira.', skills:['Engenharia de Software','Requisitos','Desenvolvimento'] },
   { company:'Brandford Studio · Moçambique & Brasil', role:'Co-fundador', period:'2026 - Presente', type:'Agência', desc:'Agência de marketing digital: estratégia, conteúdo e presença digital para clientes nos dois países.', skills:['Estratégia','Conteúdo','Social Media'] },
   { company:'Legend Segurança, Lda', role:'Desenvolvedor Web & Director de Comunicação', period:'2025 - Presente', type:'Full-Time', desc:'Construção do site institucional, domínio e e-mail corporativo. Gestão e direcção da comunicação social e das redes da empresa.', skills:['React','Node.js','Comunicação'] },
   { company:'KDesperta · Academia de exames de admissão', role:'Social Media Manager & Designer', period:'2025 - Presente', type:'Full-Time', desc:'+312% de seguidores em 90 dias com conteúdo orgânico. 2.1M impressões orgânicas; reels, motion e calendário editorial.', skills:['Meta Business Suite','Figma','Photoshop'] },
